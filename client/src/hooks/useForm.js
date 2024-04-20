@@ -72,7 +72,7 @@ const useForm = () => {
       return false;
     });
 
-    //if (invalidFieldIndex >= 0) return onError(invalidFieldIndex);
+    if (invalidFieldIndex >= 0) return onError(invalidFieldIndex);
 
     if (state.currentSubStep < currentStep.subSteps.length - 1) {
       return dispatch({ type: "NEXT_SUBSTEP" });
