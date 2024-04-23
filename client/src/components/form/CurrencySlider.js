@@ -38,7 +38,7 @@ const CurrencySlider = ({ error, onChange, field }) => {
             value={field.value}
           />
         ) : (
-          <div className="mx-2 my-3 mx-2">
+          <div className="mx-2 my-3">
             <div className="flex justify-between text-xs font-medium text-gray-500">
               <p>
                 {field?.prefix}
@@ -58,7 +58,7 @@ const CurrencySlider = ({ error, onChange, field }) => {
                 min={minMax.min}
                 max={minMax.max}
                 onChange={(e) => onChange(e.target.value)}
-                className="w-full h-2 accent-secondary rounded-lge cursor-pointer"
+                className="w-full h-2 accent-secondary rounded-lg cursor-pointer"
               />
               <div className="rounded-md absolute left-1/2 -top-24 transform -translate-x-1/2 mt-2 transition-all ease-in-out duration-200 bg-gray-200 p-2 opacity-0 scale-y-0 group-hover:opacity-100 group-hover:scale-y-100">
                 <CurrencySliderInput

@@ -1,20 +1,22 @@
 import React from 'react';
-import about from '../../assets/images/about.png';
+import AboutImg from '../../assets/images/about.jpg';
 
 const About = () => {
     return (
         <section id="about" className='container mx-auto min-h-screen flex justify-between items-center'>
             <div className='grid grid-cols-5 space-x-5 md:space-x-10'>
-                <div className='col-span-5 md:col-span-2 mx-5 space-y-2 flex flex-col'>
-                    <img src={about} alt="" className='flex-1 rounded-lg object-cover' />
-                    <div className="grid grid-cols-2 gap-2">
-                        <div className='flex flex-col rounded-lg bg-white px-4 py-6'>
-                            <span className='text-3xl font-semibold'>100+</span>
-                            <span className='text-sm font-light capitalize'>years experience</span>
-                        </div>
-                        <div className='flex flex-col rounded-lg bg-white px-4 py-6'>
-                            <span className='text-3xl font-semibold'>$0</span>
-                            <span className='text-sm font-light capitalize'>premiums</span>
+                <div className='col-span-5 md:col-span-2 mx-5 space-y-2 flex flex-col relative'>
+                    <img src={AboutImg} alt="" className='flex-1 rounded-lg object-cover' />
+                    <div className="absolute w-full left-0 bottom-2">
+                        <div className='mx-2 grid grid-cols-2 gap-2'>
+                            <div className='flex flex-col rounded-lg bg-primary text-secondary px-4 py-6'>
+                                <span className='text-3xl font-semibold'>100+</span>
+                                <span className='text-sm font-light capitalize'>years experience</span>
+                            </div>
+                            <div className='flex flex-col rounded-lg bg-primary text-secondary px-4 py-6'>
+                                <span className='text-3xl font-semibold'>$0</span>
+                                <span className='text-sm font-light capitalize'>premiums</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -40,7 +42,7 @@ const About = () => {
                     <br />
                     <p className='text-dark-color'>Sincerely,</p>
                     <p className='text-dark-color'>
-                        <b>Erick</b>
+                        <b>Jean</b>
                     </p>
                     <p className='text-dark-color'>Lead Benefit Specialist</p>
                 </div>

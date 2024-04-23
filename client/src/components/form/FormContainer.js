@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SecondaryButton } from "../buttons";
+import { PrimaryButton, SecondaryButton } from "../buttons";
 import useForm from "../../hooks/useForm";
 import FormItem from "./FormItem";
 
@@ -21,7 +21,7 @@ const FormContainer = ({ submit }) => {
         {currentStep.icon && (
           <img className="size-20" src={currentStep.icon} alt="" />
         )}
-        <h1 className="text-2xl font-semibold text-dark my-1 text-center">
+        <h1 className="text-2xl font-semibold text-secondary my-1 text-center">
           {currentStep.title}
         </h1>
         <p className="text-gray-400 text-base text-center">
@@ -55,7 +55,7 @@ const FormContainer = ({ submit }) => {
           />
         }
         {isEndReached ? (
-          <SecondaryButton
+          <PrimaryButton
             text={"See plans"}
             fullWidth={true}
             onClick={() => {
@@ -70,7 +70,7 @@ const FormContainer = ({ submit }) => {
             loading={loading}
           />
         ) : (
-          <SecondaryButton
+          <PrimaryButton
             text={"Continue"}
             fullWidth={true}
             onClick={() => nextStep((i) => setErrorIndex(i))}

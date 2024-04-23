@@ -1,14 +1,15 @@
 import React from 'react';
+import Logo from '../../assets/images/logo.png'
 
 const Footer = () => {
     return (
-        <div className='bg-dark py-4 mt-8'>
-            <div className='container flex justify-between items-center mx-auto text-white text-xs'>
-                <p>© 2024 Subsidy Searches. All rights reserved.</p>
-                <ul className="flex gap-x-4">
-                    <li>Terms of Services</li>
-                    <li>Privacy Policy</li>
-                </ul>
+        <div className='bg-secondary py-4 mt-8'>
+            <div className='flex flex-col justify-center items-center text-white text-xs'>
+                <div className='flex gap-x-2'>
+                    <h1 className='uppercase font-bold text-lg md:text-2xl text-primary'>subsidy searches</h1>
+                    <img src={Logo} alt="logo" width={30} />
+                </div>
+                <p>Copyrights © 2024</p>
             </div>
         </div>
 

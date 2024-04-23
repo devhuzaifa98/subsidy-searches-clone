@@ -13,7 +13,7 @@ const RadioButton = ({ id , label, onChange, value, isFirst, setShowConditionalC
                     name={id}
                     checked={label === value}
                     onChange={() => {onChange(label); setShowConditionalComponent(label)}}
-                    className="w-4 h-4 text-secondary bg-light border-light focus:ring-secondary"
+                    className="w-4 h-4 text-primary bg-light border-light focus:ring-primary"
                 />
                 <label htmlFor={id} className="w-full py-4 ms-2 text-sm font-normal capitalize">
                     {label}
