@@ -69,7 +69,7 @@ const useForm = () => {
         (field.type === "number" && Number(field.value) < 0)
       )
         return true;
-        return false
+      return false;
     });
 
     if (invalidFieldIndex >= 0) return onError(invalidFieldIndex);
@@ -93,24 +93,24 @@ const useForm = () => {
       ? dispatch({ type: "PREVIOUS_SUBSTEP" })
       : dispatch({ type: "PREVIOUS_STEP" });
 
-  const parseData = () => {
-    const parseField = (field) => {
-      switch (field.type) {
-        case "number":
-        case "currency_slider":
-        case "currency":
-          return Number(field.value);
-        case "radio_group":
-          return field.value === "Yes" || field.value === "No"
-            ? field.value === "YES"
-            : field.value;
-        case "date":
-          return new Date(field.value);
-        default:
-          return field.value;
-      }
-    };
+  const parseField = (field) => {
+    switch (field.type) {
+      case "number":
+      case "currency_slider":
+      case "currency":
+        return Number(field.value);
+      case "radio_group":
+        return field.value === "Yes" || field.value === "No"
+          ? field.value === "YES"
+          : field.value;
+      case "date":
+        return new Date(field.value);
+      default:
+        return field.value;
+    }
+  };
 
+  const parseData = () => {
     const parseFields = (fields) => {
       const parsedFields = {};
 
@@ -174,6 +174,7 @@ const useForm = () => {
     previousStep,
     removeDependent,
     parseData,
+    parseField,
     state: state,
     currentStep: currentStep.subSteps[state.currentSubStep],
     isEndReached:

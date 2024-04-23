@@ -29,6 +29,7 @@ const FormItem = ({ field, error, changeHandler }) => {
         case 'select':
             return <Select {...commonProps} options={field.data} />
         case 'appendable_form':
+            console.log(field.value)
             return <div>
                 {field.value.map((f, i) => (
                     <div className="rounded-md py-3 px-3 mb-5 shadow-sm ring-1 ring-gray-300 flex flex-row justify-between">

@@ -1,10 +1,12 @@
 import { useState } from "react"
 import { SecondaryButton } from "../buttons"
 import FormItem from "./FormItem"
+import useForm from "../../hooks/useForm"
 
 const AppendableForm = ({ label, fields, onAppend, required, error }) => {
     const [formData, setFormData] = useState(fields.map(field => ({ ...field })))
     const [errorIndex, setErrorIndex] = useState()
+    const { parseField } = useForm()
 
     const changeHandler = (key, value) => {
         setErrorIndex(null)
@@ -17,7 +19,7 @@ const AppendableForm = ({ label, fields, onAppend, required, error }) => {
     const submit = () => {
         const emptyFieldIndex = formData.findIndex(field => field.required && field.value.length === 0)
         if (emptyFieldIndex >= 0) return setErrorIndex(emptyFieldIndex)
-        onAppend(Object.fromEntries(formData.map(data => [data.name, data.value])))
+        onAppend(Object.fromEntries(formData.map(data => [data.name, parseField(data)])))
         setFormData(fields.map(field => ({ ...field })))
     }
 
