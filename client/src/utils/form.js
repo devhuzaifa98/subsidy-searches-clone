@@ -246,21 +246,7 @@ export const STEPS = [
                         name: 'recent_employer', type: 'text', placeholder: 'Google Inc.', value: '', required: true, label: 'most recent employer',
                     }
                 ]
-            },
-            {
-                name: 'procedures_in_schedule',
-                title: 'Scheduled procedures',
-                subtitle: 'Do you have any procedures or surgeries scheduled?',
-                icon: surgery,
-                fields: [
-                    {
-                        name: 'procedures_in_schedule', label: 'procedures in schedule', type: 'radio_group', value: '', required: true, data: [
-                            'Yes', 'No'
-                        ]
-                    },
-                    { name: 'procedure_type', type: 'text', placeholder: 'john', value: '', required: true, label: 'type of procedure', dependency: 'procedures_in_schedule' },
-                ]
-            },
+            }
         ]
     }
 ]
