@@ -6,7 +6,7 @@ const Stepper = ({ steps, currentStep }) => {
             {steps.map((step, index) => (
                 <div key={step.name} className={`flex flex-col border-${(index <= currentStep) ? 'secondary' : 'gray-200'} py-2 md:pt-4 border-t-4`}  >
                     <span className={`text-xs font-medium text-${(index <= currentStep) ? 'secondary' : 'gray-500'}`}>Step {index + 1}</span>
-                    <span className={`text-sm font-medium text-dark uppercase`}>{step.name}</span>
+                    <span className={`text-sm font-medium text-black uppercase`}>{step.name}</span>
                 </div>
             ))}
         </div>
