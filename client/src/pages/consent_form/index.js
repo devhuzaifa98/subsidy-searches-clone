@@ -5,7 +5,7 @@ import { SecondaryButton, DisableButton } from "../../components/buttons"
 import SignaturePad from 'react-signature-canvas'
 import { useNavigate } from "react-router-dom"
 
-const TermsAndConditions = () => {
+const ConsentForm = () => {
 
     const navigate = useNavigate()
     const companyName = 'Get Benefits Now'
@@ -176,4 +176,4 @@ const TermsAndConditions = () => {
     )
 }
 
-export default TermsAndConditions
+export default ConsentForm

@@ -17,7 +17,7 @@ const Navbar = () => {
     return (
         <nav className='w-full'>
             <div className='container flex flex-col md:flex-row md:items-center justify-center md:justify-between p-4 mx-auto'>
-                <div className='flex justify-center items-center sm:justify-start gap-x-2'>
+                <div className='flex justify-center items-center sm:justify-start gap-x-2 cursor-pointer'>
                     <h1 onClick={() => navigate('/')} className='text-secondary text-xl text-center md:text-2xl font-bold cursor-pointer uppercase mb-3 sm:mb-0'>Subsidy searches</h1>
                     <img src={Logo} alt="logo" width={40} />
                 </div>
