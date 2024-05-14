@@ -8,7 +8,7 @@ const TextInput = ({ label, error, onChange, id, required, width, wrapperClasses
                 htmlFor={id}
                 className={`absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium ${error ? 'text-error animate-fadein' : 'text-dark'} capitalize`}
             >
-               {error ? `Please enter a valid ${label.toLowerCase()}` : `${label} ${required ? '*' : ''}`}
+               {error ? `Please enter a valid ${label ? label.toLowerCase() : additional_options?.type}` : `${label} ${required ? '*' : ''}`}
             </label>
             <input
                 key={id}

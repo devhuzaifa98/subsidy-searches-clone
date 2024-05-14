@@ -145,9 +145,10 @@ export const STEPS = [
                 icon: location,
                 fields: [
                     { name: 'street', type: 'text', placeholder: '1234 Main St.', value: '', required: true, label: 'street' },
+                    { name: 'county', type: 'text', placeholder: 'county', value: '', label: 'county' },
                     { name: 'city', type: 'text', placeholder: 'city', value: '', required: true, label: 'city' },
                     { name: 'state', type: 'select', placeholder: 'state', value: '', required: true, label: 'state', data: states.map(state => state.name) },
-                    { name: 'zip', type: 'text', placeholder: '12345', value: '', required: true, label: 'zip code' },
+                    { name: 'zip', type: 'text', placeholder: '12345', value: '', required: true, label: 'zip code', hidden: true },
                 ]
             },
             {
@@ -198,8 +199,7 @@ export const STEPS = [
                             },
                             { name: 'dob', placeholder: 'john', type: 'date', value: '', required: true, label: 'date of birth' },
                             { name: 'social_security_number', type: 'number', value: '', required: true, label: 'social security number' },
-                            { name: 'email', type: 'email', placeholder: 'john.doe@example.com', value: '', required: true, label: 'email' },
-                            { name: 'phone', type: 'tel', placeholder: '(123) 456-7890', value: '', required: true, label: 'phone number' },
+                            { name: 'phone', type: 'tel', placeholder: '(123) 456-7890', value: '', required: false, label: 'phone number' },
                             { name: "uses_tobacco", type: 'radio_group', value: '', required: true, label: 'Are you a tobacco user?', data: ['Yes', 'No'] }
                         ]
                     }
@@ -237,13 +237,13 @@ export const STEPS = [
                 ]
             },
             {
-                name: 'recent_employer',
+                name: 'employer',
                 title: 'Recent employer',
                 subtitle: 'Where were you last employed? If you are self employed, please type in "Self employed"',
                 icon: employer,
                 fields: [
                     {
-                        name: 'recent_employer', type: 'text', placeholder: 'Google Inc.', value: '', required: true, label: 'most recent employer',
+                        name: 'employer', type: 'text', placeholder: 'Google Inc.', value: '', required: true, label: 'most recent employer',
                     }
                 ]
             }

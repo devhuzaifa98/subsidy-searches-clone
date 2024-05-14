@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TextInput from "../../components/form/TextInput";
 import { PrimaryButton } from "../../components/buttons";
@@ -6,6 +6,19 @@ import HeroImg from '../../assets/images/hero.png'
 
 const Hero = () => {
     const navigate = useNavigate();
+    const [zipCode, setZipCode] = useState('')
+    const [error, setError] = useState(false)
+
+    const handleNextButtonClick = () => {
+        if (zipCode.trim() !== '') {
+            localStorage.setItem('zip', zipCode.trim())
+            navigate('/form')
+        } else {
+            setError(true)
+        }
+    }
+
+    useEffect(() => localStorage.removeItem('zip'), [])
 
     return (
         <section
@@ -34,12 +47,18 @@ const Hero = () => {
                     <div className="flex flex-col sm:flex-row items-stretch justify-center">
                         <TextInput
                             placeholder="123456"
-                            label={""}
-                            onChange={() => { }}
-                            wrapperClasses='flex-1'
-                            innerClasses='py-4 sm:text-xl font-bold sm:rounded-r-none'
+                            label={''}
+                            onChange={value => {
+                                setZipCode(value)
+                                setError(false)
+                            }}
+                            wrapperClasses="flex-1"
+                            innerClasses={`py-4 sm:text-xl font-bold ${error ? 'border-error' : 'border-light'}`}
+                            required={true}
+                            error={error}
+                            type="number"
                         />
-                        <PrimaryButton onClick={() => navigate('/form')} text="Next" classNames="font-bold text-xl mb-5 border border-primary sm:rounded-l-none" />
+                        <PrimaryButton onClick={handleNextButtonClick} text="Next" classNames="font-bold text-xl mb-5 border border-primary sm:rounded-l-none" />
                     </div>
                 </div>
             </div>

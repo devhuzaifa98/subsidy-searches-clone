@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PrimaryButton, SecondaryButton } from "../buttons";
 import useForm from "../../hooks/useForm";
 import FormItem from "./FormItem";
@@ -15,6 +15,15 @@ const FormContainer = ({ submit }) => {
     inputChangeHandler,
   } = useForm();
 
+  useEffect(() => {
+    const fieldIndex = currentStep.fields.findIndex((field) => field.name === 'zip')
+    const zip = localStorage.getItem('zip')
+    if (fieldIndex >= 0 && zip && zip.length > 0) {
+        setErrorIndex(null)
+        inputChangeHandler('zip', zip)
+    }
+  }, [currentStep.fields])
+
   return (
     <>
       <div className="flex flex-col items-center mb-8">
@@ -29,7 +38,7 @@ const FormContainer = ({ submit }) => {
         </p>
       </div>
       <div className="bg-white border border-light shadow rounded-lg p-6 mb-8">
-        {currentStep.fields.map((field, index) => (
+        {currentStep.fields.filter(field => !field.hidden).map((field, index) => (
           <FormItem
             error={errorIndex === index}
             changeHandler={(input) => {
