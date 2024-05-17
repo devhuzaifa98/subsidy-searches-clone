@@ -30,5 +30,6 @@ server/.env.local
 server/.env.development.local
 server/.env.test.local
 server/.env.production
+server/pdfs
 
 request.http

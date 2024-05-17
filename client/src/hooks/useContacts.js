@@ -88,7 +88,7 @@ const useContacts = () => {
                 ],
                 customField: {
                     [GHL_CUSTOM_FIELDS["contact.current_insurance"]]: contactDoc.details.current_insurance,
-                    [GHL_CUSTOM_FIELDS['contact.primary_ssn']]: contactDoc.ssn,
+                    [GHL_CUSTOM_FIELDS['contact.primary_ssn']]: contactDoc.details.ssn,
                     [GHL_CUSTOM_FIELDS['contact.county']]:
                         contactDoc.details.county,
                     [GHL_CUSTOM_FIELDS[
@@ -109,6 +109,8 @@ const useContacts = () => {
                         planDetails?.issuer?.name || "",
                     [GHL_CUSTOM_FIELDS['contact.carrierplan_selected']]:
                         planDetails?.name || "",
+                    [GHL_CUSTOM_FIELDS['contact.consent']]:
+                        `${process.env.REACT_APP_BACKEND_URL}/pdfs/${contactDoc._id}.pdf`,
                 },
             }
 
@@ -122,7 +124,7 @@ const useContacts = () => {
                         'Yes',
                     [GHL_CUSTOM_FIELDS['contact.spouse_full_name']]:
                         `${contactDoc.spouse_details.first_name} ${contactDoc.spouse_details.last_name}`,
-                    [GHL_CUSTOM_FIELDS['contact.spouse_date_of_birth']]:
+                    [GHL_CUSTOM_FIELDS['contact.spouse_dob']]:
                         formatDate(contactDoc.spouse_details.dob),
                     [GHL_CUSTOM_FIELDS['contact.spouse_email']]:
                         contactDoc.spouse_details.email,

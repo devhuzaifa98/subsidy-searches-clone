@@ -100,7 +100,7 @@ export const STEPS = [
                         ]
                     },
                     { name: 'dob', placeholder: 'john', type: 'date', value: '', required: true, label: 'date of birth' },
-                    { name: 'social_security_number', type: 'number', value: '', required: true, label: 'social security number' },
+                    { name: 'ssn', type: 'number', value: '', required: true, label: 'social security number' },
                     { name: "uses_tobacco", type: 'radio_group', value: '', required: true, label: 'Are you a tobacco user?', data: ['Yes', 'No'] }
                 ]
             },
