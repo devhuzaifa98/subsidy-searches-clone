@@ -110,7 +110,7 @@ const useContacts = () => {
                     [GHL_CUSTOM_FIELDS['contact.carrierplan_selected']]:
                         planDetails?.name || "",
                     [GHL_CUSTOM_FIELDS['contact.consent']]:
-                        `${process.env.REACT_APP_BACKEND_URL}/pdfs/${contactDoc._id}.pdf`,
+                        `${process.env.REACT_APP_BACKEND_URL}${contactDoc.consent}`,
                 },
             }
 

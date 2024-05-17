@@ -99,6 +99,7 @@ router
       doc.end();
 
       console.log(`PDF generated successfully at /pdfs/${contact._id}.pdf`);
+      contact.consent = `/pdfs/${contact._id}.pdf`
     }
     await contact.save();
     return res.status(200).send();
