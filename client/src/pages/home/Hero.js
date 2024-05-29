@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import TextInput from "../../components/form/TextInput";
+import TextField from "../../components/shared/FormElements/TextField";
 import { PrimaryButton } from "../../components/buttons";
 import HeroImg from '../../assets/images/hero.png'
 
@@ -45,7 +45,7 @@ const Hero = () => {
                         Enter your zip code to see if you qualify
                     </p>
                     <div className="flex flex-col sm:flex-row items-stretch justify-center">
-                        <TextInput
+                        <TextField
                             placeholder="123456"
                             label={''}
                             onChange={value => {

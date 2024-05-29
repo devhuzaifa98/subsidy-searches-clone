@@ -1,27 +1,27 @@
 import { createContext, useContext, useReducer } from "react";
-import { STEPS } from '../utils/form'
-import { formReducer } from "./reducers/reducer";
-
+import { FormReducer } from "./reducers/reducer";
 
 const FormContext = createContext({
-    state: {
-        form: STEPS,
-        currentStep: 0,
-        currentSubStep: 0,
-    },
-    dispatch: () => { },
+  state: {
+    data: {},
+    currentStep: 0,
+    errorIds: [],
+  },
+  dispatch: () => {},
 });
 
-export const useFormState = () => {
-    return useContext(FormContext);
-};
+export const useFormContext = () => useContext(FormContext);
 
 export const FormContextProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(formReducer, { currentStep: 0, currentSubStep: 0, form: STEPS })
+  const [state, dispatch] = useReducer(FormReducer, {
+    currentStep: 0,
+    data: {},
+    errorIds: [],
+  });
 
-    return (
-        <FormContext.Provider value={{ state, dispatch }}>
-            {children}
-        </FormContext.Provider>
-    );
+  return (
+    <FormContext.Provider value={{ state, dispatch }}>
+      {children}
+    </FormContext.Provider>
+  );
 };
