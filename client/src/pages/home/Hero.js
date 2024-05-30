@@ -9,6 +9,7 @@ const Hero = () => {
     const [error, setError] = useState();
 
     const handleNextButtonClick = () => {
+        setError(false);
         const zip = document.getElementById('details.zip')
         if(!zip.checkValidity()) return setError(true)
         navigate('/form')
@@ -44,11 +45,11 @@ const Hero = () => {
                             label={''}
                             id={'details.zip'}
                             wrapperClasses="flex-1"
-                            innerClasses={`py-4 sm:text-xl rounded-r-none font-bold ${error ? 'border-red' : 'border-light'}`}
+                            innerClasses={`py-4 sm:text-xl md:rounded-r-none font-bold ${error ? 'border-red' : 'border-light'}`}
                             type="text"
                             minLength={5}
                         />
-                        <PrimaryButton onClick={handleNextButtonClick} text="Next" classNames="font-bold text-xl mt-2 mb-6 border border-primary rounded-l-none" />
+                        <PrimaryButton onClick={handleNextButtonClick} text="Next" classNames="font-bold text-xl mb-6 border border-primary md:rounded-l-none" />
                     </div>
                 </div>
             </div>
