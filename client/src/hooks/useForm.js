@@ -45,7 +45,7 @@ const useForm = () => {
         let inputs = Array.from(document.querySelectorAll('input, select'))
         const erroredInputs = inputs
             .map(input => {
-                if(!input.checkValidity()) return { id: input.id, message: input.validationMessage }
+                if(!input.checkValidity()) return { id: input.id, message: input.validationMessage.replace('Please match the requested format', 'Please enter a valid {label}') }
                 return undefined
             })
             .filter(val => val !== undefined)

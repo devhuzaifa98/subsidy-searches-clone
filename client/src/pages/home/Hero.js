@@ -6,19 +6,13 @@ import HeroImg from '../../assets/images/hero.png'
 
 const Hero = () => {
     const navigate = useNavigate();
-    const [zipCode, setZipCode] = useState('')
-    const [error, setError] = useState(false)
+    const [error, setError] = useState();
 
     const handleNextButtonClick = () => {
-        if (zipCode.trim() !== '') {
-            localStorage.setItem('zip', zipCode.trim())
-            navigate('/form')
-        } else {
-            setError(true)
-        }
+        const zip = document.getElementById('details.zip')
+        if(!zip.checkValidity()) return setError(true)
+        navigate('/form')
     }
-
-    useEffect(() => localStorage.removeItem('zip'), [])
 
     return (
         <section
@@ -48,17 +42,13 @@ const Hero = () => {
                         <TextField
                             placeholder="123456"
                             label={''}
-                            onChange={value => {
-                                setZipCode(value)
-                                setError(false)
-                            }}
+                            id={'details.zip'}
                             wrapperClasses="flex-1"
-                            innerClasses={`py-4 sm:text-xl font-bold ${error ? 'border-error' : 'border-light'}`}
-                            required={true}
-                            error={error}
-                            type="number"
+                            innerClasses={`py-4 sm:text-xl rounded-r-none font-bold ${error ? 'border-red' : 'border-light'}`}
+                            type="text"
+                            minLength={5}
                         />
-                        <PrimaryButton onClick={handleNextButtonClick} text="Next" classNames="font-bold text-xl mb-5 border border-primary sm:rounded-l-none" />
+                        <PrimaryButton onClick={handleNextButtonClick} text="Next" classNames="font-bold text-xl mt-2 mb-6 border border-primary rounded-l-none" />
                     </div>
                 </div>
             </div>

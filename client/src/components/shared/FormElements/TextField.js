@@ -21,7 +21,7 @@ const TextField = ({
       key={label}
       className={`${error ? "mb-2" : "mb-6"} flex-1 ${wrapperClasses}`}
     >
-      <label className="block md:text-lg text-md font-bold text-gray-700 mb-2">{label}</label>
+      <label className="block md:text-lg text-md font-bold text-gray-700">{label}</label>
         <input
               id={id}
               value= {_.get(data, id) || ""}
@@ -32,7 +32,7 @@ const TextField = ({
               } focus:shadow-outline w-full rounded px-4 py-3 leading-tight text-gray-700 shadow-md focus:border-light focus:outline-none focus:ring-0 ${innerClasses}`}
               {...additionalProperties}
         />
-      {error && <p className="text-red text-xs md:text-sm mt-1">{error.message}</p>}
+      {error && <p className="text-red text-xs md:text-sm mt-1">{error.message.replace("{label}", label)}</p>}
     </div>
   );
 };
