@@ -21,7 +21,7 @@ const TextField = ({
       key={label}
       className={`${error ? "mb-2" : "mb-6"} flex-1 ${wrapperClasses}`}
     >
-      <label className="block md:text-lg text-md font-bold text-gray-700">{label}</label>
+      <label className="block md:text-lg text-md font-bold text-gray-700 mb-1">{label}</label>
         <input
               id={id}
               value= {_.get(data, id) || ""}

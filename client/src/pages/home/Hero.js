@@ -49,7 +49,7 @@ const Hero = () => {
                             type="text"
                             minLength={5}
                         />
-                        <PrimaryButton onClick={handleNextButtonClick} text="Next" classNames="font-bold text-xl mb-6 border border-primary md:rounded-l-none" />
+                        <PrimaryButton onClick={handleNextButtonClick} text="Next" classNames="font-bold text-xl mb-6 mt-1 border border-primary md:rounded-l-none" />
                     </div>
                 </div>
             </div>

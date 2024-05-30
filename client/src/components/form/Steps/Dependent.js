@@ -16,7 +16,7 @@ const Dependent = ({ n, title, id, maxDate }) => {
             }}
         >
             <div>
-                <div className="mb-6 flex space-x-6">
+                <div className="flex space-x-6">
                     <TextField
                         label={'Date of Birth'}
                         id={`${idPrefx}.dob`}
@@ -25,7 +25,7 @@ const Dependent = ({ n, title, id, maxDate }) => {
                         min={'1900-12-31'}
                     />
                 </div>
-                <div className="mb-6 flex space-x-6">
+                <div className="flex space-x-6">
                     <TextField
                         label={'First Name'}
                         id={`${idPrefx}.first_name`}

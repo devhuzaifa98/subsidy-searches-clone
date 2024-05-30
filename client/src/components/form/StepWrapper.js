@@ -29,7 +29,7 @@ const StepWrapper = ({
                 )}
             </div>
             <div
-                className={`p-6 ${borderBottom ? 'border-b-8 border-primary' : ''}`}
+                className={`py-6 ${dependent ? 'md:px-6' : 'px-6'} ${borderBottom ? 'border-b-8 border-primary' : ''}`}
             >
                 {children}
             </div>

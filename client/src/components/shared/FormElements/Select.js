@@ -12,7 +12,7 @@ const Select = ({ label, options, id, onChange, value, disableAutoUpdate }) => {
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
     return (
         <div kev={id} className="relative mb-5">
-            <label className="block md:text-base text-sm font-bold text-gray-700">
+            <label className="block md:text-base text-sm font-bold text-gray-700 mb-1">
                 {label}
             </label>
             <select
