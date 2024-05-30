@@ -17,7 +17,7 @@ const StepWrapper = ({
             className={`mb-8 mt-4 overflow-hidden ${rounded ? 'rounded-lg' : ''} border border-light bg-white ${dependent ? 'p-4' : ''}`}
         >
             <div className="flex items-center justify-between bg-primary p-6">
-                <h2 className="text-xl md:text-2xl font-semibold text-white">{title}</h2>
+                <h2 className="text-xl md:text-3xl font-semibold text-white">{title}</h2>
                 {removable ? (
                     <ImCross
                         onClick={onRemove}

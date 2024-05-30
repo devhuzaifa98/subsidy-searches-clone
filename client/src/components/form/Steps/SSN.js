@@ -13,6 +13,7 @@ const SSN = ({ title }) => {
                 pattern={'^\\d{3}-\\d{2}-\\d{4}$'}
                 format={'###-##-####'}
                 minLength={10}
+                innerClasses={'mb-2'}
             />
             {(data?.dependents || []).map((dependent, index) => (
                 <DependentSSN

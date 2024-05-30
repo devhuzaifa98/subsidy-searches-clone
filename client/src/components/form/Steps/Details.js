@@ -19,7 +19,7 @@ const Details = ({ title }) => {
             <div className="overflow-hidden border-b border-gray-300 bg-white">
                 <StepWrapper title={title}>
                     <div>
-                        <div className="flex space-x-6 wrap">
+                        <div className="flex space-x-6 wrap md:mb-6">
                             <TextField
                                 label={'Date of Birth'}
                                 id={'details.dob'}
@@ -42,7 +42,7 @@ const Details = ({ title }) => {
                                 />
                             </div>
                         </div>
-                        <div className="flex space-x-6">
+                        <div className="flex md:mb-6 space-x-6">
                             <TextField
                                 label={'First Name'}
                                 id={'details.first_name'}
@@ -97,7 +97,7 @@ const Details = ({ title }) => {
                     maxDate={maxDate}
                 />
             ))}
-            <div className="mx-auto mt-4 flex w-full max-w-2xl justify-between space-x-4">
+            <div className="mx-auto mt-4 flex w-full h-14 max-w-2xl justify-between space-x-4">
                 <PrimaryButton
                     text={'Spouse'}
                     classNames="w-[50%]"

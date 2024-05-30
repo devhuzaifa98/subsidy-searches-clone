@@ -45,7 +45,7 @@ const Form = () => {
                     title={STEPS[currentStep].subtitle}
                 />
                 <StepComponent title={STEPS[currentStep].title} />
-                <div className="mx-auto mt-4 flex w-full max-w-2xl justify-between space-x-4">
+                <div className="mx-auto mt-4 h-14 flex w-full max-w-2xl justify-between space-x-4">
                     <SecondaryButton
                         text={'Back'}
                         classNames="w-[50%]"
