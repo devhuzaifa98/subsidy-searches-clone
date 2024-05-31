@@ -64,6 +64,7 @@ const useForm = () => {
         previousStep,
         initializeForm,
         updateFormField,
+        setErrorIds,
         data: state.data,
         currentStep: state.currentStep,
         errorIds: state.errorIds,

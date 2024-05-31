@@ -4,13 +4,13 @@ import useSmoothScroll from '../../hooks/useSmoothScoll';
 import { useNavigate } from 'react-router-dom';
 import LogoImg from '../../assets/images/logo.png'
 
-const Logo = () => {
+const Logo = ({ leftAligned, className }) => {
     const { sticky, scrollToTop } = useSmoothScroll();
     const navigate = useNavigate();
 
     return (
-        <nav className='text-center p-4 sm:p-8'>
-            <div className='flex justify-center items-center gap-x-2 cursor-pointer'>
+        <nav className={`text-center p-4 ${leftAligned ? "!pl-0 w-full" : ""} sm:p-8 ` + className}>
+            <div className={`flex ${leftAligned ? "" : "justify-center"} items-center gap-x-2 cursor-pointer`}>
                 <h1 onClick={() => navigate('/')} className='text-secondary text-xl sm:text-2xl md:text-3xl font-semibold cursor-pointer'>Subsidy Searches</h1>
                 <img src={LogoImg} alt="logo" className='h-6 sm:h-10' />
             </div>

@@ -3,7 +3,7 @@ import AboutImg from '../../assets/images/about.jpg';
 
 const About = () => {
     return (
-        <section id="about" className='container mx-auto min-h-screen flex justify-center items-center'>
+        <section id="about" className='container mx-auto min-h-screen flex justify-center items-center relative z-0 bg-white'>
             <div className='grid grid-cols-4 space-x-5 md:space-x-10'>
                 <div className='col-span-5 md:col-span-2 mx-5'>
                     <img src={AboutImg} alt="" className='rounded-lg object-cover' />
