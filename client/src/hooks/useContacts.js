@@ -1,5 +1,5 @@
-import axios from 'axios'
-import GHL_CUSTOM_FIELDS from '../utils/ghl_custom_fields'
+import axios from 'axios';
+import GHL_CUSTOM_FIELDS from '../utils/ghl_custom_fields';
 
 const useContacts = () => {
     const createContact = async payload => {
@@ -10,9 +10,9 @@ const useContacts = () => {
                 'Content-Type': 'application/json',
             },
             data: JSON.stringify(payload),
-        }
-        return (await axios.request(config)).data
-    }
+        };
+        return (await axios.request(config)).data;
+    };
 
     const updateContact = async (id, payload) => {
         try {
@@ -21,54 +21,54 @@ const useContacts = () => {
                     `${process.env.REACT_APP_BACKEND_URL}/contacts/${id}`,
                     { payload }
                 )
-            ).data
+            ).data;
         } catch (error) {
-            console.error('Error updating contact:', error)
-            throw error
+            console.error('Error updating contact:', error);
+            throw error;
         }
-    }
+    };
 
     const getContact = async id => {
         try {
             const response = await axios.get(
                 `${process.env.REACT_APP_BACKEND_URL}/contacts/${id}`
-            )
-            return response.data
+            );
+            return response.data;
         } catch (error) {
-            console.error('Error fetching contact:', error)
-            throw error
+            console.error('Error fetching contact:', error);
+            throw error;
         }
-    }
+    };
 
     const sendContactToGHL = async id => {
         try {
-            const contactDoc = await getContact(id)
+            const contactDoc = await getContact(id);
             const planDetails = (
                 await axios.get(
                     `https://marketplace.api.healthcare.gov/api/v1/plans/${contactDoc.plan_id}?apikey=${process.env.REACT_APP_API_KEY}`
                 )
-            )?.data?.plan
-            const state = localStorage.getItem('state')
-            const dependentsDetails = {}
+            )?.data?.plan;
+            const state = localStorage.getItem('state');
+            const dependentsDetails = {};
 
             if (contactDoc.dependents) {
                 contactDoc.dependents.forEach((dependent, index) => {
-                    const keyPrefix = `contact.dependent_${index + 1}`
+                    const keyPrefix = `contact.dependent_${index + 1}`;
                     dependentsDetails[
                         GHL_CUSTOM_FIELDS[`${keyPrefix}_full_name`]
-                    ] = `${dependent.first_name} ${dependent.last_name}`
+                    ] = `${dependent.first_name} ${dependent.last_name}`;
                     dependentsDetails[GHL_CUSTOM_FIELDS[`${keyPrefix}_dob`]] =
-                        formatDate(dependent.dob)
+                        formatDate(dependent.dob);
                     dependentsDetails[GHL_CUSTOM_FIELDS[`${keyPrefix}_ssn`]] =
-                        dependent.social_security_number
+                        dependent.social_security_number;
                     if (index >= 1 && index <= 2) {
                         dependentsDetails[
                             GHL_CUSTOM_FIELDS[
                                 `contact.do_you_have_a_${index + 1}nd_dependent`
                             ]
-                        ] = 'Yes'
+                        ] = 'Yes';
                     }
-                })
+                });
             }
 
             const contact = {
@@ -84,7 +84,8 @@ const useContacts = () => {
                 postalCode: contactDoc.details.zip,
                 tags: ['subsidysearches.com', process.env.NODE_ENV],
                 customField: {
-                    [GHL_CUSTOM_FIELDS['contact.primary_ssn']]: contactDoc.details.ssn,
+                    [GHL_CUSTOM_FIELDS['contact.primary_ssn']]:
+                        contactDoc.details.ssn,
                     [GHL_CUSTOM_FIELDS['contact.county']]:
                         contactDoc.details.county,
                     [GHL_CUSTOM_FIELDS['contact.primary_dob']]: formatDate(
@@ -114,7 +115,7 @@ const useContacts = () => {
                     [GHL_CUSTOM_FIELDS['contact.consent']]:
                         `${process.env.REACT_APP_BACKEND_URL}${contactDoc.consent}`,
                 },
-            }
+            };
 
             if (contactDoc.spouse_details) {
                 const spouseCustomFields = {
@@ -135,11 +136,11 @@ const useContacts = () => {
                         contactDoc.spouse_details.uses_tobacco === 'true'
                             ? 'Yes'
                             : 'No',
-                }
+                };
                 contact.customField = {
                     ...contact.customField,
                     ...spouseCustomFields,
-                }
+                };
             }
 
             const res = await fetch(process.env.REACT_APP_GHL_URL, {
@@ -151,19 +152,19 @@ const useContacts = () => {
                 },
                 method: 'POST',
                 body: JSON.stringify(contact),
-            })
+            });
 
             if (res.status === 200)
-                console.log('Contact published on GHL successfully 🎉')
-            else console.error('Failed to publish contact on GHL')
+                console.log('Contact published on GHL successfully 🎉');
+            else console.error('Failed to publish contact on GHL');
         } catch (error) {
-            console.error('Error sending contact to GHL:', error)
-            throw error
+            console.error('Error sending contact to GHL:', error);
+            throw error;
         }
-    }
+    };
 
     const formatDate = dateString => {
-        const date = new Date(dateString)
+        const date = new Date(dateString);
 
         const monthAbbreviations = [
             'Jan',
@@ -178,24 +179,24 @@ const useContacts = () => {
             'Oct',
             'Nov',
             'Dec',
-        ]
+        ];
 
         // Extract day, month, and year components from the date object
-        const day = date.getDate()
-        const monthIndex = date.getMonth()
-        const year = date.getFullYear()
+        const day = date.getDate();
+        const monthIndex = date.getMonth();
+        const year = date.getFullYear();
 
         // Format the date string as "DD Month YYYY"
-        const formattedDate = `${day < 10 ? '0' + day : day} ${monthAbbreviations[monthIndex]} ${year}`
-        return formattedDate
-    }
+        const formattedDate = `${day < 10 ? '0' + day : day} ${monthAbbreviations[monthIndex]} ${year}`;
+        return formattedDate;
+    };
 
     return {
         createContact,
         updateContact,
         getContact,
         sendContactToGHL,
-    }
-}
+    };
+};
 
-export default useContacts
+export default useContacts;

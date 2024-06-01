@@ -1,5 +1,5 @@
-import TextField from '../../shared/FormElements/TextField'
-import StepWrapper from '../StepWrapper'
+import TextField from '../../shared/FormElements/TextField';
+import StepWrapper from '../StepWrapper';
 
 const Income = () => {
     return (
@@ -20,7 +20,7 @@ const Income = () => {
                 maxLength={15}
             />
         </StepWrapper>
-    )
-}
+    );
+};
 
-export default Income
+export default Income;

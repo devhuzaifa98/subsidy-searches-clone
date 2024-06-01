@@ -1,15 +1,15 @@
-import PropTypes from 'prop-types'
-import React, { useEffect } from 'react'
-import useForm from '../../../hooks/useForm'
-import _ from 'lodash'
+import _ from 'lodash';
+import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
+import useForm from '../../../hooks/useForm';
 
 const Select = ({ label, options, id, onChange, value, disableAutoUpdate }) => {
-    const { data, inputChangeHandler, errorIds } = useForm()
+    const { data, inputChangeHandler, errorIds } = useForm();
     useEffect(() => {
         //sets a default value on first render
-        if (!_.get(data,id) && !disableAutoUpdate)
-            inputChangeHandler(id, options[0])
-    }, []) // eslint-disable-line react-hooks/exhaustive-deps
+        if (!_.get(data, id) && !disableAutoUpdate)
+            inputChangeHandler(id, options[0]);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
     return (
         <div kev={id} className="relative mb-5">
             <label className="block text-base font-bold text-gray-700">
@@ -23,15 +23,15 @@ const Select = ({ label, options, id, onChange, value, disableAutoUpdate }) => {
                         ? onChange
                         : e => inputChangeHandler(id, e.target.value)
                 }
-                value={disableAutoUpdate ? value : _.get(data,id)}
+                value={disableAutoUpdate ? value : _.get(data, id)}
             >
                 {options.map((option, index) => (
                     <option key={option + index}>{option}</option>
                 ))}
             </select>
         </div>
-    )
-}
+    );
+};
 
 Select.propTypes = {
     label: PropTypes.string.isRequired,
@@ -41,6 +41,6 @@ Select.propTypes = {
             label: PropTypes.string.isRequired,
         })
     ).isRequired,
-}
+};
 
-export default Select
+export default Select;

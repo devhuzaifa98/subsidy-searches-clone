@@ -1,18 +1,18 @@
-import useForm from '../../../hooks/useForm'
-import CheckBox from '../../shared/FormElements/CheckBox'
-import TextField from '../../shared/FormElements/TextField'
-import StepWrapper from '../StepWrapper'
+import useForm from '../../../hooks/useForm';
+import CheckBox from '../../shared/FormElements/CheckBox';
+import TextField from '../../shared/FormElements/TextField';
+import StepWrapper from '../StepWrapper';
 
 const Dependent = ({ n, title, id, maxDate }) => {
-    const idPrefx = n !== undefined ? `${id}[${n}]` : `${id}`
-    const { updateFormField } = useForm()
+    const idPrefx = n !== undefined ? `${id}[${n}]` : `${id}`;
+    const { updateFormField } = useForm();
     return (
         <StepWrapper
             title={title}
             removable={true}
             dependent={true}
             onRemove={() => {
-                updateFormField(idPrefx, "", true)
+                updateFormField(idPrefx, '', true);
             }}
         >
             <div>
@@ -57,7 +57,7 @@ const Dependent = ({ n, title, id, maxDate }) => {
                 />
             </div>
         </StepWrapper>
-    )
-}
+    );
+};
 
-export default Dependent
+export default Dependent;

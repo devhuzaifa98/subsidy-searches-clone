@@ -1,31 +1,31 @@
-const companyName = "Subsidy Searches"
-const privacyPolicyUrl = "https://subsidysearches.com/privacy-policy"
-const companyContact = "support@apinsurancecompany.com"
+const companyName = 'Subsidy Searches';
+const privacyPolicyUrl = 'https://subsidysearches.com/privacy-policy';
+const companyContact = 'support@apinsurancecompany.com';
 
 export const CONSENT_DATA = [
     {
         isSelected: false,
         title: 'Attest and Agree',
-        text: 'You attest that your estimated income for 2024 will be at least the Federal Poverty Limit for your state and household requirements. You agree to notify us as soon as you become aware of any changes to expected income per month that you provided above. Failure to notify us of any changes may result in your eligibility being affected. '
+        text: 'You attest that your estimated income for 2024 will be at least the Federal Poverty Limit for your state and household requirements. You agree to notify us as soon as you become aware of any changes to expected income per month that you provided above. Failure to notify us of any changes may result in your eligibility being affected. ',
     },
     {
         isSelected: false,
         title: 'Income verification',
-        text: `In some cases, it may be necessary to verify your income. If income verification is required in order to complete your enrollment, you authorize ${companyName} to submit an income attestation letter on your behalf with the information that you have provided.`
+        text: `In some cases, it may be necessary to verify your income. If income verification is required in order to complete your enrollment, you authorize ${companyName} to submit an income attestation letter on your behalf with the information that you have provided.`,
     },
     {
         isSelected: false,
         title: 'Consent to Enrollment; Verification of Information',
-        text: `By supplying my initials and signing below, I hereby provide consent and authorization to ${companyName} to enroll me and/or my family in a health insurance plan through the ACA Marketplace at no cost to me. I grant permission for ${companyName} to access my healthcare.gov account for the purpose of quoting, enrolling, and maintaining my health insurance. If I already have a plan, I request that ${companyName} and its agents become my Agent of Record and switch me to a better plan if one is available. This consent will remain in effect unless and until rescinded by you in writing, by emailing ${companyContact}`
+        text: `By supplying my initials and signing below, I hereby provide consent and authorization to ${companyName} to enroll me and/or my family in a health insurance plan through the ACA Marketplace at no cost to me. I grant permission for ${companyName} to access my healthcare.gov account for the purpose of quoting, enrolling, and maintaining my health insurance. If I already have a plan, I request that ${companyName} and its agents become my Agent of Record and switch me to a better plan if one is available. This consent will remain in effect unless and until rescinded by you in writing, by emailing ${companyContact}`,
     },
     {
         title: 'Acknowledgment of Plan Changes',
-        text: 'If we change your plan, you understand that your deductible and/or annual maximum out of pocket will start over again once your new policy begins. If you are not currently covered, this will not apply/affect you.'
+        text: 'If we change your plan, you understand that your deductible and/or annual maximum out of pocket will start over again once your new policy begins. If you are not currently covered, this will not apply/affect you.',
     },
     {
         isSelected: false,
         title: 'Notification of changes to Income',
-        text: `If your income is $0 (or less than the Federal Poverty Limit), you attest that your estimated income for 2024 will be at least the Federal Poverty Limit for your state and household requirements. If your income will be less than (or greater than) those limits, you agree to notify us or the marketplace of any changes or updates as soon as possible. Failure to notify us of any changes may result in your eligibility being affected. I Agree to notify ${companyName} if my estimated income for 2024 changes.`
+        text: `If your income is $0 (or less than the Federal Poverty Limit), you attest that your estimated income for 2024 will be at least the Federal Poverty Limit for your state and household requirements. If your income will be less than (or greater than) those limits, you agree to notify us or the marketplace of any changes or updates as soon as possible. Failure to notify us of any changes may result in your eligibility being affected. I Agree to notify ${companyName} if my estimated income for 2024 changes.`,
     },
     {
         isSelected: false,
@@ -56,7 +56,7 @@ export const CONSENT_DATA = [
         
         Any person, including, without limitation, ${companyName}, any web-broker through which ${companyName} may submit an application for insurance on my behalf, and the FFM, may rely upon the validity of this limited power of attorney or a copy of it unless that person knows it has been terminated.
         
-        By checking this box I provide my express consent to ${companyName} and grant ${companyName} and/or its agents a limited power of attorney to enroll me in a health insurance plan and to automatically enroll me in a plan at renewal.`
+        By checking this box I provide my express consent to ${companyName} and grant ${companyName} and/or its agents a limited power of attorney to enroll me in a health insurance plan and to automatically enroll me in a plan at renewal.`,
     },
     {
         isSelected: false,
@@ -94,6 +94,6 @@ export const CONSENT_DATA = [
         
         I understand that at this time I have not yet applied for Federally Facilitated Exchange health insurance, and that ${companyName} will be using the information and consents I provide herein to fill out, sign on my behalf, and submit the Federally Facilitated Exchange application. If you have any questions, please contact ${companyName} at ${companyContact}. This form is used to help to find insurance for you and your family.
         
-        The information provided must be accurate for the subsidies to be accurate. Failure to provide the correct information could result in claims being invalidated or the termination of your insurance policy. By submitting an application, you confirm that the information is accurate to the best of your knowledge.`
-    }
-]
+        The information provided must be accurate for the subsidies to be accurate. Failure to provide the correct information could result in claims being invalidated or the termination of your insurance policy. By submitting an application, you confirm that the information is accurate to the best of your knowledge.`,
+    },
+];

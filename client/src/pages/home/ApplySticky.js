@@ -1,14 +1,17 @@
-import { IoIosArrowDropright } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
+import { IoIosArrowDropright } from 'react-icons/io';
+import { useNavigate } from 'react-router-dom';
 
 const ApplySticky = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     return (
-        <div onClick={() => navigate('/form')} className="md:hidden py-3 font-bold text-xl w-full bottom-0 bg-primary fixed z-10 flex justify-center gap-x-2 items-center">
+        <div
+            onClick={() => navigate('/form')}
+            className="fixed bottom-0 z-10 flex w-full items-center justify-center gap-x-2 bg-primary py-3 text-xl font-bold md:hidden"
+        >
             <h1>Apply Now</h1>
             <IoIosArrowDropright size={25} />
         </div>
-    )
-}
+    );
+};
 
-export default ApplySticky
+export default ApplySticky;

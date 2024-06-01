@@ -1,17 +1,15 @@
-import React from 'react'
-import Logo from './shared/Logo'
-import Footer from './shared/Footer'
+import React from 'react';
+import Footer from './shared/Footer';
+import Logo from './shared/Logo';
 
 const Layout = ({ children }) => {
     return (
-        <section className='h-screen max-h-screen overflow-y-auto flex flex-col'>
+        <section className="flex h-screen max-h-screen flex-col overflow-y-auto">
             <Logo />
-            <main className='container mx-auto pb-8 flex-1'>
-                {children}
-            </main>
+            <main className="container mx-auto flex-1 pb-8">{children}</main>
             <Footer />
         </section>
-    )
-}
+    );
+};
 
-export default Layout
+export default Layout;

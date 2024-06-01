@@ -1,12 +1,21 @@
 import React from 'react';
 import ActivityIndicator from '../shared/ActivityIndicator';
 
-const SecondaryButton = ({ text, invert, type, classNames = '', onClick, loading, style, disabled }) => {
+const SecondaryButton = ({
+    text,
+    invert,
+    type,
+    classNames = '',
+    onClick,
+    loading,
+    style,
+    disabled,
+}) => {
     return (
         <button
             type={type ? type : 'button'}
-            style={{...style}}
-            className={`${(disabled || loading) ? 'cursor-not-allowed' : ''} flex items-center justify-center px-4 md:px-8 py-2 capitalize text-lg border rounded ${invert ? 'text-secondary border-secondary' : 'text-white border-secondary bg-secondary'} ${classNames}`}
+            style={{ ...style }}
+            className={`${disabled || loading ? 'cursor-not-allowed' : ''} flex items-center justify-center rounded border px-4 py-2 text-lg capitalize md:px-8 ${invert ? 'border-secondary text-secondary' : 'border-secondary bg-secondary text-white'} ${classNames}`}
             onClick={onClick ? onClick : undefined}
             disabled={loading || disabled}
         >

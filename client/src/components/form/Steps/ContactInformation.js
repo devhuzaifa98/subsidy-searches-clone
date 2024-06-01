@@ -1,5 +1,5 @@
-import TextField from '../../shared/FormElements/TextField'
-import StepWrapper from '../StepWrapper'
+import TextField from '../../shared/FormElements/TextField';
+import StepWrapper from '../StepWrapper';
 
 const ContactInformation = ({ title }) => {
     return (
@@ -26,7 +26,7 @@ const ContactInformation = ({ title }) => {
                 placeholder={'Address'}
             />
         </StepWrapper>
-    )
-}
+    );
+};
 
-export default ContactInformation
+export default ContactInformation;
