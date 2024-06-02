@@ -10,6 +10,7 @@ const Income = () => {
                 type={'number'}
                 placeholder={'Household Income'}
                 min={1800}
+                wrapperClasses="mb-4"
             />
             <TextField
                 label={'County'}
@@ -18,6 +19,7 @@ const Income = () => {
                 placeholder={'County'}
                 minLength={4}
                 maxLength={15}
+                wrapperClasses="mb-2"
             />
         </StepWrapper>
     );

@@ -17,7 +17,7 @@ const ThankYou = () => {
                     confirming your form registration will be sent to you
                     shortly.
                 </p>
-                <div className="flex gap-x-2 bg-primary px-3 py-1">
+                <div className="flex gap-x-2 bg-primary-300 px-3 py-1">
                     <h1 className="text-lg font-bold uppercase text-secondary md:text-2xl">
                         subsidy searches
                     </h1>

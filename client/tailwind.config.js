@@ -7,7 +7,19 @@ module.exports = {
         colors: {
             ...colors,
             ...{
-                primary: '#FFCF56',
+                primary: {
+                    50: '#fffaeb',
+                    100: '#fff1c6',
+                    200: '#ffe188',
+                    300: '#ffcf56',
+                    400: '#ffb620',
+                    500: '#f99307',
+                    600: '#dd6c02',
+                    700: '#b74a06',
+                    800: '#94380c',
+                    900: '#7a300d',
+                    950: '#461702',
+                },
                 secondary: '#454545',
                 light: '#d0d0d0',
                 dark: '#2c2c2c',

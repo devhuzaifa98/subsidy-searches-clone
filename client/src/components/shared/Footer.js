@@ -17,13 +17,13 @@ const Footer = () => {
                     <div className="space-x-4">
                         <Link
                             to="/privacy-policy"
-                            className="hover:text-primary hover:underline"
+                            className="hover:text-primary-300 hover:underline"
                         >
                             Privacy Policy
                         </Link>
                         <Link
                             to="/terms-and-conditions"
-                            className="hover:text-primary hover:underline"
+                            className="hover:text-primary-300 hover:underline"
                         >
                             Terms & Conditions
                         </Link>

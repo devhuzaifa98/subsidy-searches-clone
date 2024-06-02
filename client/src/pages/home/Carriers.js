@@ -1,25 +1,36 @@
-import CarrierOne from '../../assets/images/carrier_1.png';
-import CarrierTwo from '../../assets/images/carrier_2.png';
-import CarrierThree from '../../assets/images/carrier_3.png';
-import CarrierFour from '../../assets/images/carrier_4.webp';
-import CarrierFive from '../../assets/images/carrier_5.webp';
-import CarrierSix from '../../assets/images/carrier_6.webp';
-import CarrierSeven from '../../assets/images/carrier_7.webp';
+import React from 'react';
+
+const carriers = [
+    { src: require('../../assets/images/carrier_1.png'), alt: 'carrier one' },
+    { src: require('../../assets/images/carrier_2.png'), alt: 'carrier two' },
+    { src: require('../../assets/images/carrier_3.png'), alt: 'carrier three' },
+    { src: require('../../assets/images/carrier_4.webp'), alt: 'carrier four' },
+    { src: require('../../assets/images/carrier_5.webp'), alt: 'carrier five' },
+    { src: require('../../assets/images/carrier_6.webp'), alt: 'carrier six' },
+    {
+        src: require('../../assets/images/carrier_7.webp'),
+        alt: 'carrier seven',
+    },
+];
 
 const Carriers = () => {
     return (
-        <div className="flex flex-col items-center justify-center gap-y-16 bg-gray-100 px-10 py-20 text-center text-5xl font-bold">
-            <h1>Carriers We Represent</h1>
+        <div className="flex flex-col items-center justify-center gap-y-16 bg-gray-100 px-10 py-20 text-center">
+            <h1 className="text-5xl font-semibold text-secondary">
+                Carriers We Represent
+            </h1>
             <div className="grid grid-cols-2 gap-10 md:grid-cols-7">
-                <StyledImage src={CarrierOne} alt="carrier one" />
-                <StyledImage src={CarrierTwo} alt="carrier two" />
-                <StyledImage src={CarrierThree} alt="carrier three" />
-                <StyledImage src={CarrierFour} alt="carrier four" />
-                <StyledImage src={CarrierFive} alt="carrier five" />
-                <StyledImage src={CarrierSix} alt="carrier six" />
-                <StyledImage src={CarrierSeven} alt="carrier seven" />
+                {carriers.map((carrier, index) => (
+                    <StyledImage
+                        key={index}
+                        src={carrier.src}
+                        alt={carrier.alt}
+                    />
+                ))}
             </div>
-            <h1 className="text-2xl">...And Many More!</h1>
+            <h3 className="text-xl font-semibold text-secondary">
+                ...And Many More!
+            </h3>
         </div>
     );
 };

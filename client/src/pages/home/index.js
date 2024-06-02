@@ -1,11 +1,12 @@
 import React from 'react';
 import Footer from '../../components/shared/Footer';
-import Navbar from '../../components/shared/Navbar';
 import About from './About';
+import Afford from './Afford';
 import ApplySticky from './ApplySticky';
 import Carriers from './Carriers';
 import Hero from './Hero';
 import Process from './Process';
+import WhyUs from './WhyUs';
 
 const Home = () => {
     return (
@@ -16,6 +17,8 @@ const Home = () => {
             </div>
             <Carriers />
             <Process />
+            <Afford />
+            <WhyUs />
             <About />
             <Footer />
         </>

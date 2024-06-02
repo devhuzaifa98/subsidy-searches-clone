@@ -10,6 +10,7 @@ const ContactInformation = ({ title }) => {
                 type={'email'}
                 placeholder={'Email'}
                 pattern={'^[a-zA-Z0-9. _-]+@[a-zA-Z0-9. -]+\\.[a-zA-Z]{2,4}$'}
+                wrapperClasses="mb-4"
             />
             <TextField
                 label={'Phone Number'}
@@ -18,12 +19,14 @@ const ContactInformation = ({ title }) => {
                 placeholder={'Phone Number'}
                 format={'+# (###) ###-####'}
                 minLength={17}
+                wrapperClasses="mb-4"
             />
             <TextField
                 label={'Address'}
                 id={'details.street'}
                 type={'text'}
                 placeholder={'Address'}
+                wrapperClasses="mb-4"
             />
         </StepWrapper>
     );

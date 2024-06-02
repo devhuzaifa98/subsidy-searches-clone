@@ -16,7 +16,7 @@ const StepWrapper = ({
             key={key}
             className={`mb-8 mt-4 overflow-hidden ${rounded ? 'rounded-lg' : ''} border border-light bg-white ${dependent ? 'p-4' : ''}`}
         >
-            <div className="flex items-center justify-between bg-primary p-6">
+            <div className="flex items-center justify-between bg-primary-300 p-6">
                 <h2 className="text-xl font-semibold text-white md:text-3xl">
                     {title}
                 </h2>
@@ -31,7 +31,7 @@ const StepWrapper = ({
                 )}
             </div>
             <div
-                className={`py-6 ${dependent ? 'md:px-6' : 'px-6'} ${borderBottom ? 'border-b-8 border-primary' : ''}`}
+                className={`py-6 ${dependent ? 'md:px-6' : 'px-6'} ${borderBottom ? 'border-b-8 border-primary-300' : ''}`}
             >
                 {children}
             </div>

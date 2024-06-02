@@ -6,7 +6,7 @@ const ApplySticky = () => {
     return (
         <div
             onClick={() => navigate('/form')}
-            className="fixed bottom-0 z-10 flex w-full items-center justify-center gap-x-2 bg-primary py-3 text-xl font-bold md:hidden"
+            className="fixed bottom-0 z-10 flex w-full items-center justify-center gap-x-2 bg-primary-300 py-3 text-xl font-bold md:hidden"
         >
             <h1>Apply Now</h1>
             <IoIosArrowDropright size={25} />

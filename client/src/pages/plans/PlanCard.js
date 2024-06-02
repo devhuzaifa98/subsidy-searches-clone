@@ -31,7 +31,7 @@ const PlanCard = ({ plan }) => {
 
     return (
         <div>
-            <span className="rounded-t bg-primary px-3 py-1 text-sm text-white">
+            <span className="rounded-t bg-primary-300 px-3 py-1 text-sm text-white">
                 Lowest premium plan
             </span>
             <div className="flex w-full flex-col rounded-b rounded-tr border border-gray-300 shadow">

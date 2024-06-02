@@ -11,7 +11,7 @@ const Select = ({ label, options, id, onChange, value, disableAutoUpdate }) => {
             updateFormField(id, options[0]);
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
     return (
-        <div kev={id} className="relative mb-5">
+        <div key={id} className="relative">
             <label className="mb-1 block text-sm font-bold text-gray-700 md:text-base">
                 {label}
             </label>

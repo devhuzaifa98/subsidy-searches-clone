@@ -38,7 +38,7 @@ const Navbar = () => {
             </div>
             {sticky && (
                 <button
-                    className="fixed bottom-8 right-8 z-50 flex h-10 w-10 items-center justify-center rounded border border-secondary bg-primary text-secondary"
+                    className="fixed bottom-8 right-8 z-50 flex h-10 w-10 items-center justify-center rounded border border-secondary bg-primary-300 text-secondary"
                     onClick={scrollToTop}
                 >
                     <BsChevronDoubleUp />
