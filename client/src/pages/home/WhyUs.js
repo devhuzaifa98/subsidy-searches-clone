@@ -1,5 +1,11 @@
 import React from 'react';
-import Wave3 from '../../svgs/wave-3';
+import wave from '../../assets/images/wave.png';
+
+const images = [
+    { src: require('../../assets/images/family_3.jpeg'), alt: 'family three' },
+    { src: require('../../assets/images/family_4.jpg'), alt: 'family four' },
+    { src: require('../../assets/images/family_5.jpg'), alt: 'family five' },
+];
 
 const STEPS = [
     {
@@ -23,25 +29,35 @@ const WhyUs = () => {
     return (
         <section
             id="why-us"
-            className="relative z-0 flex flex-col items-center justify-center gap-y-10 bg-transparent py-10 py-16 text-gray-700"
+            className="relative z-0 flex flex-col items-center justify-center gap-y-5 bg-white px-2 py-16 text-gray-700 md:gap-y-10"
         >
-            <Wave3 className="absolute bottom-0 left-0 -z-10" />
-            <h1 className="text-center text-5xl font-semibold text-secondary">
-                Why Choose Us?
-            </h1>
-            <p className="mx-auto w-1/4 text-center">
-                With decades of experience and thousands of happy customers,
-                you’re in safe hands with Boost Health Insurance.
-            </p>
-            <div className="flex w-10/12 gap-x-10">
+            <img
+                src={wave}
+                className="absolute bottom-0 left-0 -z-10 h-1/2 w-full"
+            />
+            <div>
+                <h1 className="text-center text-4xl font-semibold text-secondary md:text-5xl">
+                    Why Choose Us?
+                </h1>
+                <p className="mx-auto mt-5 max-w-[500px] text-center">
+                    With decades of experience and thousands of happy customers,
+                    you’re in safe hands with Subsidy Searches.
+                </p>
+            </div>
+            <div className="m-auto hidden max-w-[1300px] gap-x-10 md:flex">
                 {STEPS.map((step, i) => (
-                    <div className="relative mt-20 w-1/3 gap-x-5 rounded-md bg-gray-100 px-6 pb-10 pt-20 shadow-md">
-                        <div className="absolute left-1/2 top-0 h-32 w-32 -translate-x-16 -translate-y-16 rounded-full bg-gray-200 shadow-md"></div>
+                    <div className="relative mt-20 w-1/3 gap-x-5 rounded-md bg-gray-100 px-6 pb-10 pt-20 text-center shadow-md">
+                        <img
+                            {...images[i]}
+                            className="absolute left-1/2 top-0 h-32 w-32 -translate-x-16 -translate-y-16 rounded-full object-cover shadow-md"
+                        />
                         <div className="mb-4 flex gap-x-3 font-bold">
                             <span className="mt-1 flex h-7 w-8 items-center justify-center rounded bg-primary-300 text-xl text-secondary">
                                 {i + 1}
                             </span>
-                            <h1 className="text-2xl font-bold">{step.title}</h1>
+                            <h1 className="text-start text-2xl font-bold">
+                                {step.title}
+                            </h1>
                         </div>
                         <p>{step.description}</p>
                     </div>

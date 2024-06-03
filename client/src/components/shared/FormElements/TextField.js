@@ -47,7 +47,7 @@ const TextField = ({
                 )}
                 {...additionalProperties}
             />
-            {error && (
+            {error && error.message.length > 0 && (
                 <p className="mt-1 text-xs text-red md:text-sm">
                     {error.message.replace('{label}', label)}
                 </p>

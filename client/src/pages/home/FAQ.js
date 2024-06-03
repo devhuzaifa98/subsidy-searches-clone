@@ -37,38 +37,40 @@ const faqData = [
 const FAQ = () => {
     const [openedIndex, setOpenedIndex] = useState();
     return (
-        <section className="bg-gray-100 py-16">
-            <div className="m-auto flex h-full max-w-[1300px] items-center justify-center">
-                <div className="w-1/2">
+        <section className="bg-white py-16">
+            <div className="flex h-full w-full flex-col items-center justify-between px-5 lg:m-auto lg:max-w-[1300px] lg:flex-row">
+                <div className="w-full max-w-[470px] lg:w-1/2">
                     <img width={75} src={Logo} alt="logo" />
-                    <h1 className="text-5xl font-semibold text-secondary">
+                    <h1 className="text-3xl font-semibold text-secondary lg:text-5xl">
                         Need more information?
                     </h1>
-                    <h1 className="text-5xl font-light text-secondary">
+                    <h1 className="text-3xl font-light text-secondary lg:text-5xl">
                         We're here to help.
                     </h1>
                     <h6 className="mt-8 text-gray-600">
                         Frequently asked questions
                     </h6>
                 </div>
-                <div className="mx-auto mt-10 w-1/2">
+                <div className="mt-10 w-full lg:w-1/2">
                     {faqData.map((item, key) => (
                         <div key={key} className="border-b border-gray-300">
-                            <button
-                                className="flex w-full items-center gap-x-2 bg-gray-100 p-4 text-left"
-                                onClick={() => setOpenedIndex(key)}
+                            <div
+                                className="flex w-full items-center gap-x-2 bg-gray-100 p-4 text-left text-lg font-medium hover:cursor-pointer"
+                                onClick={() =>
+                                    setOpenedIndex(
+                                        openedIndex === key ? undefined : key
+                                    )
+                                }
                             >
                                 {openedIndex === key ? (
                                     <FaMinus className="fill-primary-300" />
                                 ) : (
                                     <FaPlus className="fill-primary-300" />
                                 )}{' '}
-                                <span className="text-lg font-medium">
-                                    {item.title}
-                                </span>
-                            </button>
+                                <span>{item.title}</span>
+                            </div>
                             <p
-                                className={`${openedIndex === key ? 'py-5' : 'h-0 py-0 opacity-0'} bg-white px-10 text-gray-700 transition-[padding] duration-200`}
+                                className={`${openedIndex === key ? 'py-5' : 'h-0 py-0 opacity-0'} bg-gray-100 px-10 text-gray-700 transition-[padding] duration-200`}
                             >
                                 {item.description}
                             </p>

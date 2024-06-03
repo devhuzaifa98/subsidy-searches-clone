@@ -1,21 +1,23 @@
 import React from 'react';
+import { IoIosArrowDropright } from 'react-icons/io';
+import { useNavigate } from 'react-router-dom';
 import GirlMeeting from '../../assets/images/girl-meeting.jpg';
-import { PrimaryButton } from '../../components/buttons';
 import Rank from '../../svgs/rank';
 
 const Afford = () => {
+    const navigate = useNavigate();
     return (
         <section
             id="afford"
-            className="relative z-0 flex flex-col items-center justify-center gap-y-10 bg-transparent bg-white py-10 py-16 text-gray-700"
+            className="relative z-0 flex flex-col gap-y-10 bg-gray-100 bg-transparent px-5 py-10 py-16 text-gray-700"
         >
-            <h1 className="text-center text-5xl font-semibold text-secondary">
+            <h1 className="text-center text-3xl font-semibold text-secondary md:text-5xl">
                 You CAN Afford Health Insurance
             </h1>
-            <div className="mx-auto grid w-full grid-cols-1 gap-y-8 py-8 md:w-8/12 md:grid-cols-2 md:gap-x-10 md:gap-y-0">
-                <p className="px-6 md:px-0">
+            <div className="m-auto grid max-w-[1300px] grid-cols-1 gap-y-8 py-8 text-center md:grid-cols-2 md:gap-x-10 md:gap-y-0 md:text-start">
+                <p>
                     Most people don't know that they qualify for a $0 premium
-                    health insurance plan, but Boost Health Insurance has helped
+                    health insurance plan, but Subsidy Searches has helped
                     thousands of people to lower their premiums since 2014. Many
                     households do not need to pay a monthly premium to access
                     healthcare.
@@ -46,10 +48,13 @@ const Afford = () => {
                 />
             </div>
             <div className="flex flex-col items-center gap-y-2">
-                <PrimaryButton
-                    text="See if you qualify"
-                    classNames="md:px-20 md:py-4 font-semibold text-xl"
-                />
+                <button
+                    onClick={() => navigate('/form')}
+                    className="flex items-center justify-center gap-x-2 rounded-full bg-primary-300 px-20 py-5 text-xl font-bold text-white"
+                >
+                    Check Now
+                    <IoIosArrowDropright size={25} />
+                </button>
                 <div className="flex gap-x-2">
                     <Rank />
                     <p>
