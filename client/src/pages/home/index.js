@@ -4,6 +4,7 @@ import About from './About';
 import Afford from './Afford';
 import ApplySticky from './ApplySticky';
 import Carriers from './Carriers';
+import FAQ from './FAQ';
 import Hero from './Hero';
 import Process from './Process';
 import WaitingFor from './WaitingFor';
@@ -21,7 +22,7 @@ const Home = () => {
             <Afford />
             <WhyUs />
             <WaitingFor />
-            <About />
+            <FAQ />
             <Footer />
         </>
     );
