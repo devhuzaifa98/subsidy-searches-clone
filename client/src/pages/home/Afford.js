@@ -50,7 +50,7 @@ const Afford = () => {
             <div className="flex flex-col items-center gap-y-2">
                 <button
                     onClick={() => navigate('/form')}
-                    className="flex items-center justify-center gap-x-2 rounded-full bg-primary-300 px-20 py-5 text-xl font-bold text-white"
+                    className="flex items-center justify-center gap-x-2 rounded-full bg-primary-500 px-20 py-5 text-xl font-bold text-white"
                 >
                     Check Now
                     <IoIosArrowDropright size={25} />

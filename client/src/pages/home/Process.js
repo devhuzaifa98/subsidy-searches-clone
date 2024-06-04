@@ -4,24 +4,39 @@ import wave from '../../assets/images/wave.png';
 const STEPS = [
     {
         title: 'Complete the form',
-        description: 'Fill out the required information in the form to proceed.',
+        description:
+            'Fill out the required information in the form to proceed.',
     },
     {
         title: 'Evaluation',
-        description: 'Your information will be evaluated to determine eligibility.',
+        description:
+            'Your information will be evaluated to determine eligibility.',
     },
     {
         title: 'GET A $0 HEALTH INSURANCE PREMIUM',
-        description: 'If eligible, enjoy the benefits of a health insurance premium with no cost.',
+        description:
+            'If eligible, enjoy the benefits of a health insurance premium with no cost.',
     },
 ];
 
 const INCOME_DATA = [
-    { size: 1, 100: "$14,580", 150: "$21,870", 200: "$29,160", 400: "$58,320" },
-    { size: 2, 100: "$19,720", 150: "$29,580", 200: "$39,440", 400: "$78,880" },
-    { size: 3, 100: "$24,860", 150: "$37,290", 200: "$49,720", 400: "$99,440" },
-    { size: 4, 100: "$30,000", 150: "$45,000", 200: "$60,000", 400: "$120,000" },
-    { size: 5, 100: "$35,140", 150: "$52,710", 200: "$70,280", 400: "$140,560" },
+    { size: 1, 100: '$14,580', 150: '$21,870', 200: '$29,160', 400: '$58,320' },
+    { size: 2, 100: '$19,720', 150: '$29,580', 200: '$39,440', 400: '$78,880' },
+    { size: 3, 100: '$24,860', 150: '$37,290', 200: '$49,720', 400: '$99,440' },
+    {
+        size: 4,
+        100: '$30,000',
+        150: '$45,000',
+        200: '$60,000',
+        400: '$120,000',
+    },
+    {
+        size: 5,
+        100: '$35,140',
+        150: '$52,710',
+        200: '$70,280',
+        400: '$140,560',
+    },
 ];
 
 const Process = () => {
@@ -40,11 +55,13 @@ const Process = () => {
                     How It Works
                 </h1>
                 <h1 className="text-lg sm:text-2xl md:text-3xl">
-                    Eligibility for a complimentary health plan is based on household income.
+                    Eligibility for a complimentary health plan is based on
+                    household income.
                 </h1>
                 <div className="my-10 w-full px-1 text-center">
                     <h1 className="text-lg font-semibold text-primary-600 sm:text-2xl md:text-3xl">
-                        If your income falls within the blue bracket, you qualify.
+                        If your income falls within the orange bracket, you
+                        qualify.
                     </h1>
                     <h1 className="text-lg md:text-2xl">
                         Don't wait, submit the form now!
@@ -62,10 +79,21 @@ const Process = () => {
                             </thead>
                             <tbody>
                                 {INCOME_DATA.map((row, index) => (
-                                    <tr key={index} className={index % 2 === 1 ? "bg-gray-200 text-center" : "text-center"}>
+                                    <tr
+                                        key={index}
+                                        className={
+                                            index % 2 === 1
+                                                ? 'bg-gray-200 text-center'
+                                                : 'text-center'
+                                        }
+                                    >
                                         <td>{row.size}</td>
-                                        <td className="bg-primary-300">{row[100]}</td>
-                                        <td className="bg-primary-300">{row[150]}</td>
+                                        <td className="bg-primary-300">
+                                            {row[100]}
+                                        </td>
+                                        <td className="bg-primary-300">
+                                            {row[150]}
+                                        </td>
                                         <td>{row[200]}</td>
                                         <td>{row[400]}</td>
                                     </tr>
@@ -79,7 +107,10 @@ const Process = () => {
                 </div>
                 <div className="flex flex-col gap-x-10 md:flex-row">
                     {STEPS.map((step, i) => (
-                        <div key={i} className="m-2 flex items-center justify-center gap-x-5 rounded-md bg-gray-100 px-6 py-6 md:py-12 text-start">
+                        <div
+                            key={i}
+                            className="m-2 flex items-center justify-center gap-x-5 rounded-md bg-gray-100 px-6 py-6 text-start md:py-12"
+                        >
                             <h1 className="flex h-12 w-12 items-center justify-center rounded-full border border-gray-700 p-5 text-2xl font-bold">
                                 {i + 1}
                             </h1>

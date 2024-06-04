@@ -14,8 +14,8 @@ const PrimaryButton = ({
     const buttonClasses = classNames(
         'flex items-center justify-center rounded border px-4 py-2 text-lg capitalize md:px-8',
         {
-            'border-primary-300 text-primary-300': invert,
-            'border-primary-300 bg-primary-300 text-secondary': !invert,
+            'border-primary-400 text-primary-400': invert,
+            'border-primary-400 bg-primary-400 text-primary-950': !invert,
             'cursor-not-allowed': disabled || loading,
         },
         additionalClasses

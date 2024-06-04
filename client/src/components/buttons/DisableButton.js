@@ -2,7 +2,6 @@ import React from 'react';
 
 const DisableButton = ({
     text,
-    invert,
     type,
     classNames,
     onClick,
@@ -18,7 +17,7 @@ const DisableButton = ({
                 width: fullWidth ? '100%' : 'auto',
                 ...style,
             }}
-            className={`rounded-md border px-8 py-2 text-lg capitalize ${invert ? 'border-gray-600 text-gray-600' : 'border-gray-600 bg-gray-600 text-white'} ${classNames}`}
+            className={`rounded-md border border-primary-300 bg-primary-100 px-8 py-2 text-lg capitalize text-primary-500 ${classNames}`}
             onClick={onClick ? onClick : undefined}
             disabled={loading || disabled}
         >

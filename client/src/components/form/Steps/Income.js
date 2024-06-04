@@ -9,7 +9,6 @@ const Income = () => {
                 id={'details.gross_income'}
                 type={'number'}
                 placeholder={'Household Income'}
-                min={1800}
                 wrapperClasses="mb-4"
             />
             <TextField

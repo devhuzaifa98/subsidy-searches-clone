@@ -31,7 +31,7 @@ const WaitingFor = () => {
                     </p>
                     <button
                         onClick={() => navigate('/form')}
-                        className="flex w-full max-w-[350px] items-center justify-center gap-x-2 rounded-full bg-primary-300 py-4 text-xl font-bold text-white"
+                        className="flex w-full max-w-[350px] items-center justify-center gap-x-2 rounded-full bg-primary-500 py-4 text-xl font-bold text-white"
                     >
                         Check Now
                         <IoIosArrowDropright size={25} />

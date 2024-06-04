@@ -7,6 +7,7 @@ import TextField from '../../components/shared/FormElements/TextField';
 import Logo from '../../components/shared/Logo';
 import Rank from '../../svgs/rank';
 // import Wave from '../../svgs/wave';
+import PhoneWhite from '../../assets/images/phone-white.webp';
 import Wave from '../../assets/images/wave.png';
 import useForm from '../../hooks/useForm';
 
@@ -30,13 +31,30 @@ const Hero = () => {
             id="hero"
             className="relative z-0 flex flex-1 flex-col justify-between border-b border-b-light"
         >
-            <div className="w-full bg-secondary py-3.5 text-center">
-                <a
-                    href="/"
-                    className="text-lg font-semibold text-white hover:underline"
-                >
-                    $0 Premium Healthcare
+            <div className="flex w-full items-center justify-center gap-x-1 bg-secondary py-2 text-center text-gray-200">
+                <a href="/" className="text-md font-semibold hover:underline">
+                    $0 Premium Healthcare!
                 </a>
+                <span className="text-md hidden font-light lg:block">
+                    Need help?
+                </span>
+                <span className="hidden text-lg font-semibold lg:block">
+                    Call toll free:
+                </span>
+                <div className="flex items-center">
+                    <img src={PhoneWhite} className="h-10 w-10" />
+                    <div className="flex flex-col">
+                        <a
+                            href="tel:1-866-650-0567"
+                            className="text-md font-extrabold !leading-none lg:text-lg"
+                        >
+                            1-888-294-9212
+                        </a>
+                        <span className="text-xs font-medium text-primary-300 lg:text-xs">
+                            Sun - Sat 8 AM - 8 PM EST
+                        </span>
+                    </div>
+                </div>
             </div>
             <img
                 src={Wave}
@@ -45,7 +63,7 @@ const Hero = () => {
             <div className="m-auto flex max-w-[1300px] flex-1 flex-col justify-between gap-y-20 px-2 py-2 md:px-0 md:py-10">
                 <div className="flex flex-col">
                     <div className="p-4">
-                        <Logo className='!p-0 !py-2.5' />
+                        <Logo className="!p-0 !py-2.5" />
                         <div className="my-4 flex gap-x-2 text-sm text-gray-600">
                             <Rank />
                             <p>
@@ -58,7 +76,7 @@ const Hero = () => {
                             <h1>
                                 See if you’re eligible for a $0 premium health
                                 insurance plan{' '}
-                                <br className='block sm:hidden' />
+                                <br className="block sm:hidden" />
                                 <span className="text-2xl">
                                     4 Out Of 5 Of Our Customers Qualify
                                 </span>
@@ -68,14 +86,14 @@ const Hero = () => {
                                     placeholder="123456"
                                     id="details.zip"
                                     wrapperClasses="mb-0"
-                                    innerClasses="py-4 sm:text-xl font-bold rounded-l-md"
+                                    innerClasses="py-4 sm:text-xl font-semibold rounded-l-md"
                                     type="text"
                                     minLength="5"
                                 />
                                 <PrimaryButton
                                     onClick={handleNextButtonClick}
                                     text="Get $0 Premium"
-                                    className="rounded-r-md border border-primary-300 text-xl font-bold sm:rounded-l-none"
+                                    className="rounded-r-md border border-primary-500 text-xl font-bold sm:rounded-l-none"
                                 />
                             </div>
                         </div>
@@ -95,11 +113,11 @@ const Hero = () => {
                         className="w-36 rounded-full bg-white p-4"
                     />
                     <p className="text-2xl text-white">
-                        "I worked with Jean trying to find the most affordable
-                        insurance plan that would protect me and my family as
-                        well. He was able to guide me through the process and
-                        put me in a plan that is amazing. Highly recommend this
-                        company!!"
+                        "I worked with Subsidy Searches trying to find the most
+                        affordable insurance plan that would protect me and my
+                        family as well. They were able to guide me through the
+                        process and put me in a plan that is amazing. Highly
+                        recommend this company!!"
                         <br />
                         <br />- Paul D.
                     </p>

@@ -5,8 +5,19 @@ const formatValue = (value, pattern) => {
     let endOfValue = 0;
     let characterIndex = 0;
     let newValue = value;
+    let result = '';
 
-    return [...pattern]
+    const patternHasPrefix = pattern.startsWith('+1');
+    if (patternHasPrefix) {
+        result += '+1 ';
+        pattern = pattern.slice(3); // Remove '+1 ' from the pattern
+        // Remove the '+1' prefix from the value if it exists
+        if (newValue.startsWith('1')) {
+            newValue = newValue.slice(1);
+        }
+    }
+
+    result += [...pattern]
         .map((patternCharacter, index) => {
             const character = newValue[characterIndex];
             const patternLength = pattern.length;
@@ -26,6 +37,8 @@ const formatValue = (value, pattern) => {
         })
         .splice(0, endOfValue)
         .join('');
+
+    return result;
 };
 
 export const handleFormat = (infoRef, event, format) => {

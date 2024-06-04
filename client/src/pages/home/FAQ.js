@@ -13,7 +13,7 @@ const faqData = [
     Depending on the plan you are eligible for, and what is available in your state, your plan may also cover extra services like hearing, vision, dental, and other wellness programs that traditional Medicare does not.`,
     },
     {
-        title: 'Am I eligible for a $0 premium policy?',
+        title: 'Am I eligible for subsidy through the marketplace?',
         description: `4 out of 5 applicants are eligible for a $0 premium policy and 80% of customers will pay no more than $10 per month.
     Eligibility depends on the combination of a number of factors including your age, income, and location.
     But don’t worry - we will determine your eligibility based on the answers provided in your application form.

@@ -42,7 +42,7 @@ const TextField = ({
                 className={classNames(
                     'appearance-none shadow',
                     { 'border-red': error, 'border-light': !error },
-                    'focus:shadow-outline w-full rounded px-4 py-3 leading-tight text-gray-700 shadow-md focus:border-light focus:outline-none focus:ring-0',
+                    'focus:shadow-outline w-full rounded px-4 py-3 leading-tight text-gray-700 shadow-md placeholder:font-light placeholder:text-gray-400 focus:border-light focus:outline-none focus:ring-0',
                     innerClasses
                 )}
                 {...additionalProperties}

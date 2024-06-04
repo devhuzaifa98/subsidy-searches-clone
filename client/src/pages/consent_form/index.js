@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SignaturePad from 'react-signature-canvas';
-import { DisableButton, SecondaryButton } from '../../components/buttons';
+import { DisableButton, PrimaryButton } from '../../components/buttons';
 import Layout from '../../components/Layout';
 import AttestableCard from '../../components/T&C/AttestableCard';
 import useContacts from '../../hooks/useContacts';
@@ -82,11 +82,10 @@ const ConsentForm = () => {
                 <div className="flex justify-end">
                     <DisableButton
                         text="Clear"
-                        invert={true}
                         classNames="mr-5"
                         onClick={() => signaturePadRef.current.clear()}
                     />
-                    <SecondaryButton
+                    <PrimaryButton
                         text="Submit"
                         disabled={tnc.some(term => !term.isSelected)}
                         onClick={onSubmit}
