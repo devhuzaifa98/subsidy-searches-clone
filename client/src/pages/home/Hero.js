@@ -45,7 +45,7 @@ const Hero = () => {
             <div className="m-auto flex max-w-[1300px] flex-1 flex-col justify-between gap-y-20 px-2 py-2 md:px-0 md:py-10">
                 <div className="flex flex-col">
                     <div className="p-4">
-                        <Logo className={'!justify-start !p-0 !py-2.5'} />
+                        <Logo className='!p-0 !py-2.5' />
                         <div className="my-4 flex gap-x-2 text-sm text-gray-600">
                             <Rank />
                             <p>
@@ -58,11 +58,12 @@ const Hero = () => {
                             <h1>
                                 See if you’re eligible for a $0 premium health
                                 insurance plan{' '}
+                                <br className='block sm:hidden' />
                                 <span className="text-2xl">
                                     4 Out Of 5 Of Our Customers Qualify
                                 </span>
                             </h1>
-                            <div className="mt-36 flex flex-col items-stretch justify-center sm:flex-row sm:gap-x-3">
+                            <div className="mt-36 flex flex-col items-stretch justify-center gap-y-3 sm:flex-row sm:gap-x-3">
                                 <TextField
                                     placeholder="123456"
                                     id="details.zip"

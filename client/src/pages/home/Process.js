@@ -4,19 +4,24 @@ import wave from '../../assets/images/wave.png';
 const STEPS = [
     {
         title: 'Complete the form',
-        description:
-            'Fill out the required information in the form to proceed.',
+        description: 'Fill out the required information in the form to proceed.',
     },
     {
         title: 'Evaluation',
-        description:
-            'Your information will be evaluated to determine eligibility.',
+        description: 'Your information will be evaluated to determine eligibility.',
     },
     {
         title: 'GET A $0 HEALTH INSURANCE PREMIUM',
-        description:
-            'If eligible, enjoy the benefits of a health insurance premium with no cost.',
+        description: 'If eligible, enjoy the benefits of a health insurance premium with no cost.',
     },
+];
+
+const INCOME_DATA = [
+    { size: 1, 100: "$14,580", 150: "$21,870", 200: "$29,160", 400: "$58,320" },
+    { size: 2, 100: "$19,720", 150: "$29,580", 200: "$39,440", 400: "$78,880" },
+    { size: 3, 100: "$24,860", 150: "$37,290", 200: "$49,720", 400: "$99,440" },
+    { size: 4, 100: "$30,000", 150: "$45,000", 200: "$60,000", 400: "$120,000" },
+    { size: 5, 100: "$35,140", 150: "$52,710", 200: "$70,280", 400: "$140,560" },
 ];
 
 const Process = () => {
@@ -28,78 +33,53 @@ const Process = () => {
             <img
                 src={wave}
                 className="absolute bottom-0 left-0 -z-10 h-1/2 w-full"
+                alt="wave"
             />
             <div className="m-auto flex max-w-[1300px] flex-col items-center justify-center gap-y-5 text-center">
-                <h1 className="text-4xl font-semibold md:text-5xl">
+                <h1 className="text-2xl font-semibold sm:text-4xl md:text-5xl">
                     How It Works
                 </h1>
-                <h1 className="text-2xl md:text-3xl">
-                    Eligibility for a complimentary health plan is based on
-                    household income.
+                <h1 className="text-lg sm:text-2xl md:text-3xl">
+                    Eligibility for a complimentary health plan is based on household income.
                 </h1>
                 <div className="my-10 w-full px-1 text-center">
-                    <h1 className="text-2xl font-semibold text-primary-600 md:text-3xl">
-                        If your income falls within the blue bracket, you
-                        qualify.
+                    <h1 className="text-lg font-semibold text-primary-600 sm:text-2xl md:text-3xl">
+                        If your income falls within the blue bracket, you qualify.
                     </h1>
-                    <h1 className="text-xl md:text-2xl">
+                    <h1 className="text-lg md:text-2xl">
                         Don't wait, submit the form now!
                     </h1>
-                    <table className="mt-4 w-full border-separate border-spacing-1">
-                        <thead>
-                            <tr>
-                                <th>Family Size</th>
-                                <th class="bg-primary-300">100%</th>
-                                <th class="bg-primary-300">150%</th>
-                                <th>200%</th>
-                                <th>400%</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr className="spacing-y-3 text-center">
-                                <td>1</td>
-                                <td class="bg-primary-300">$14,580</td>
-                                <td class="bg-primary-300">$21,870</td>
-                                <td>$29,160</td>
-                                <td>$58,320</td>
-                            </tr>
-                            <tr className="bg-gray-200 text-center">
-                                <td>2</td>
-                                <td class="bg-primary-300">$19,720</td>
-                                <td class="bg-primary-300">$29,580</td>
-                                <td>$39,440</td>
-                                <td>$78,880</td>
-                            </tr>
-                            <tr className="text-center">
-                                <td>3</td>
-                                <td class="bg-primary-300">$24,860</td>
-                                <td class="bg-primary-300">$37,290</td>
-                                <td>$49,720</td>
-                                <td>$99,440</td>
-                            </tr>
-                            <tr className="bg-gray-200 text-center">
-                                <td>4</td>
-                                <td class="bg-primary-300">$30,000</td>
-                                <td class="bg-primary-300">$45,000</td>
-                                <td>$60,000</td>
-                                <td>$120,000</td>
-                            </tr>
-                            <tr className="text-center">
-                                <td>5</td>
-                                <td class="bg-primary-300">$35,140</td>
-                                <td class="bg-primary-300">$52,710</td>
-                                <td>$70,280</td>
-                                <td>$140,560</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div className="overflow-x-auto">
+                        <table className="mt-4 min-w-full border-separate border-spacing-1">
+                            <thead>
+                                <tr>
+                                    <th>Family Size</th>
+                                    <th className="bg-primary-300">100%</th>
+                                    <th className="bg-primary-300">150%</th>
+                                    <th>200%</th>
+                                    <th>400%</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {INCOME_DATA.map((row, index) => (
+                                    <tr key={index} className={index % 2 === 1 ? "bg-gray-200 text-center" : "text-center"}>
+                                        <td>{row.size}</td>
+                                        <td className="bg-primary-300">{row[100]}</td>
+                                        <td className="bg-primary-300">{row[150]}</td>
+                                        <td>{row[200]}</td>
+                                        <td>{row[400]}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                     <center>
                         <b>Note:</b> Exact income levels may vary by state.
                     </center>
                 </div>
                 <div className="flex flex-col gap-x-10 md:flex-row">
                     {STEPS.map((step, i) => (
-                        <div className="m-2 flex items-center justify-center gap-x-5 rounded-md bg-gray-100 px-6 py-12 text-start">
+                        <div key={i} className="m-2 flex items-center justify-center gap-x-5 rounded-md bg-gray-100 px-6 py-6 md:py-12 text-start">
                             <h1 className="flex h-12 w-12 items-center justify-center rounded-full border border-gray-700 p-5 text-2xl font-bold">
                                 {i + 1}
                             </h1>

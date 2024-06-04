@@ -36,8 +36,6 @@
     "server": "#569cd6",
     "*": "#fff"
   },
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "vuesion",
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },

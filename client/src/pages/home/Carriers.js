@@ -15,11 +15,11 @@ const carriers = [
 
 const Carriers = () => {
     return (
-        <div className="flex flex-col items-center justify-center bg-gray-100 px-10 py-10 text-center">
-            <h1 className="py-6 text-5xl font-semibold text-secondary">
+        <div className="flex flex-col items-center justify-center bg-gray-100 px-6 py-10 text-center sm:px-10">
+            <h1 className="py-6 text-2xl font-semibold text-secondary sm:text-5xl">
                 Carriers We Represent
             </h1>
-            <div className="grid grid-cols-2 gap-10 py-6 md:grid-cols-7">
+            <div className="grid grid-cols-2 gap-6 py-6 sm:gap-10 md:grid-cols-7">
                 {carriers.map((carrier, index) => (
                     <StyledImage
                         key={index}
@@ -36,7 +36,7 @@ const Carriers = () => {
 };
 
 const StyledImage = ({ src, alt }) => (
-    <div className="flex h-44 w-auto max-w-36 items-center justify-center bg-white px-5 py-10">
+    <div className="flex h-16 w-auto max-w-36 items-center justify-center bg-white px-4 py-4 sm:h-44 sm:px-5 sm:py-10">
         <img src={src} alt={alt} />
     </div>
 );

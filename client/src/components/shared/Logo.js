@@ -12,7 +12,7 @@ const Logo = ({ className }) => {
     return (
         <nav
             className={classNames(
-                `flex cursor-pointer items-center justify-center gap-x-2 p-4 text-center sm:p-8`,
+                `flex cursor-pointer items-center justify-center sm:justify-start gap-x-2 p-4 text-center sm:p-8`,
                 className
             )}
         >

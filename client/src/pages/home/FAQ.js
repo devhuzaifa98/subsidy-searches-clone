@@ -38,7 +38,7 @@ const FAQ = () => {
     const [openedIndex, setOpenedIndex] = useState();
     return (
         <section className="bg-white py-16">
-            <div className="flex h-full w-full flex-col justify-between pt-10 px-5 lg:m-auto lg:max-w-[1300px] lg:flex-row">
+            <div className="flex h-full w-full flex-col justify-between px-5 pt-10 lg:m-auto lg:max-w-[1300px] lg:flex-row">
                 <div className="w-full max-w-[470px] lg:w-1/2">
                     <img width={75} src={Logo} alt="logo" />
                     <h1 className="text-3xl font-semibold text-secondary lg:text-5xl">

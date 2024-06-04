@@ -1,6 +1,5 @@
 import React from 'react';
 import Footer from '../../components/shared/Footer';
-import About from './About';
 import Afford from './Afford';
 import ApplySticky from './ApplySticky';
 import Carriers from './Carriers';
