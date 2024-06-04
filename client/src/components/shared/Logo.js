@@ -1,21 +1,33 @@
+import classNames from 'classnames';
 import React from 'react';
-import { BsChevronDoubleUp } from "react-icons/bs";
-import useSmoothScroll from '../../hooks/useSmoothScoll';
+import { BsChevronDoubleUp } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
-import LogoImg from '../../assets/images/logo.png'
+import LogoImg from '../../assets/images/logo.png';
+import useSmoothScroll from '../../hooks/useSmoothScoll';
 
-const Logo = () => {
+const Logo = ({ className }) => {
     const { sticky, scrollToTop } = useSmoothScroll();
     const navigate = useNavigate();
 
     return (
-        <nav className='text-center p-4 sm:p-8'>
-            <div className='flex justify-center items-center gap-x-2 cursor-pointer'>
-                <h1 onClick={() => navigate('/')} className='text-secondary text-xl sm:text-2xl md:text-3xl font-semibold cursor-pointer'>Subsidy Searches</h1>
-                <img src={LogoImg} alt="logo" className='h-6 sm:h-10' />
-            </div>
+        <nav
+            className={classNames(
+                `flex cursor-pointer items-center justify-center sm:justify-start gap-x-2 p-4 text-center sm:p-8`,
+                className
+            )}
+        >
+            <h1
+                onClick={() => navigate('/')}
+                className="cursor-pointer text-xl font-semibold text-secondary sm:text-2xl md:text-3xl"
+            >
+                Subsidy Searches
+            </h1>
+            <img src={LogoImg} alt="logo" className="h-6 sm:h-10" />
             {sticky && (
-                <button className="fixed bottom-8 right-8 bg-secondary text-white w-10 h-10 rounded-lg z-50 flex items-center justify-center" onClick={scrollToTop}>
+                <button
+                    className="fixed bottom-8 right-8 z-50 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-white"
+                    onClick={scrollToTop}
+                >
                     <BsChevronDoubleUp />
                 </button>
             )}

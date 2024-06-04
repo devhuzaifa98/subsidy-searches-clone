@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Stepper = ({ steps, currentStep, title }) => {
     return (
@@ -19,7 +19,7 @@ const Stepper = ({ steps, currentStep, title }) => {
                 <h2 className="text-xl font-semibold text-gray-700">{title}</h2>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Stepper
+export default Stepper;

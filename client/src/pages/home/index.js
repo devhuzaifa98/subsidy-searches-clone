@@ -1,22 +1,30 @@
-import React from 'react'
-import Hero from './Hero'
-import Process from './Process'
-import About from './About'
-import Footer from '../../components/shared/Footer'
-import Navbar from '../../components/shared/Navbar'
+import React from 'react';
+import Footer from '../../components/shared/Footer';
+import Afford from './Afford';
+import ApplySticky from './ApplySticky';
+import Carriers from './Carriers';
+import FAQ from './FAQ';
+import Hero from './Hero';
+import Process from './Process';
+import WaitingFor from './WaitingFor';
+import WhyUs from './WhyUs';
 
 const Home = () => {
-  return (
-    <>
-        <div className="min-h-screen flex flex-col">
-            <Navbar backgroundTransparent={true}/>
-            <Hero />
-        </div>
-        <About />
-        <Process />
-        <Footer />
-    </>
-  )
-}
+    return (
+        <>
+            <ApplySticky />
+            <div className="flex min-h-screen flex-col">
+                <Hero />
+            </div>
+            <Carriers />
+            <Process />
+            <Afford />
+            <WhyUs />
+            <WaitingFor />
+            <FAQ />
+            <Footer />
+        </>
+    );
+};
 
-export default Home
+export default Home;

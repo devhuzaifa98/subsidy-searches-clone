@@ -1,7 +1,7 @@
-import ContactInformation from '../components/form/Steps/ContactInformation'
-import Details from '../components/form/Steps/Details'
-import Income from '../components/form/Steps/Income'
-import SSN from '../components/form/Steps/SSN'
+import ContactInformation from '../components/form/Steps/ContactInformation';
+import Details from '../components/form/Steps/Details';
+import Income from '../components/form/Steps/Income';
+import SSN from '../components/form/Steps/SSN';
 
 export const STEPS = [
     {
@@ -28,6 +28,6 @@ export const STEPS = [
         id: 'ssn',
         component: SSN,
     },
-]
+];
 
-export default STEPS
+export default STEPS;

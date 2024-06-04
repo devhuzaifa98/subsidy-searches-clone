@@ -1,5 +1,5 @@
-import TextField from '../../shared/FormElements/TextField'
-import StepWrapper from '../StepWrapper'
+import TextField from '../../shared/FormElements/TextField';
+import StepWrapper from '../StepWrapper';
 
 const Income = () => {
     return (
@@ -10,6 +10,7 @@ const Income = () => {
                 type={'number'}
                 placeholder={'Household Income'}
                 min={1800}
+                wrapperClasses="mb-4"
             />
             <TextField
                 label={'County'}
@@ -18,9 +19,10 @@ const Income = () => {
                 placeholder={'County'}
                 minLength={4}
                 maxLength={15}
+                wrapperClasses="mb-2"
             />
         </StepWrapper>
-    )
-}
+    );
+};
 
-export default Income
+export default Income;

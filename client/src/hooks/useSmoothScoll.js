@@ -1,16 +1,18 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 const useSmoothScroll = () => {
     const [sticky, setSticky] = useState(false);
     const [sectionOffsets, setSectionOffsets] = useState([]);
-   
+
     const handleScroll = useCallback(() => {
-        window.scrollY > (window.innerHeight - 100) ? setSticky(true) : setSticky(false);
+        window.scrollY > window.innerHeight - 100
+            ? setSticky(true)
+            : setSticky(false);
     }, []);
-    
+
     useEffect(() => {
         const sections = document.querySelectorAll('section');
-        const offsets = Array.from(sections).map((section) => section.offsetTop);
+        const offsets = Array.from(sections).map(section => section.offsetTop);
         setSectionOffsets(offsets);
 
         return () => {
@@ -27,12 +29,15 @@ const useSmoothScroll = () => {
         };
     }, [handleScroll]);
 
-    const scrollTo = useCallback((index) => {
-        window.scrollTo({
-            top: sectionOffsets[index],
-            behavior: 'smooth',
-        });
-    }, [sectionOffsets]);
+    const scrollTo = useCallback(
+        index => {
+            window.scrollTo({
+                top: sectionOffsets[index],
+                behavior: 'smooth',
+            });
+        },
+        [sectionOffsets]
+    );
 
     const scrollToTop = useCallback(() => {
         window.scrollTo({

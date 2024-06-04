@@ -1,18 +1,35 @@
+import classNames from 'classnames';
 import React from 'react';
 
-const PrimaryButton = ({ text, invert, type, classNames = '', onClick, loading, style, disabled }) => {
+const PrimaryButton = ({
+    text,
+    invert = false,
+    type = 'button',
+    classNames: additionalClasses = '',
+    onClick,
+    loading = false,
+    style,
+    disabled = false,
+}) => {
+    const buttonClasses = classNames(
+        'flex items-center justify-center rounded border px-4 py-2 text-lg capitalize md:px-8',
+        {
+            'border-primary-300 text-primary-300': invert,
+            'border-primary-300 bg-primary-300 text-secondary': !invert,
+            'cursor-not-allowed': disabled || loading,
+        },
+        additionalClasses
+    );
+
     return (
         <button
-            type={type ? type : 'button'}
-            style={{...style}}
-            className={`${(disabled || loading) ? 'cursor-not-allowed' : ''} flex items-center justify-center px-4 md:px-8 py-2 capitalize text-lg border rounded ${invert ? 'text-primary border-primary' : 'text-secondary border-primary bg-primary'} ${classNames}`}
-            onClick={onClick ? onClick : undefined}
+            type={type}
+            style={style}
+            className={buttonClasses}
+            onClick={onClick}
             disabled={loading || disabled}
         >
-            {!loading && text}
-            {loading && (
-                <div>Loading...</div>
-            )}
+            {loading ? <div>Loading...</div> : text}
         </button>
     );
 };

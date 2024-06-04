@@ -1,9 +1,9 @@
-import useForm from '../../../hooks/useForm'
-import TextField from '../../shared/FormElements/TextField'
-import StepWrapper from '../StepWrapper'
+import useForm from '../../../hooks/useForm';
+import TextField from '../../shared/FormElements/TextField';
+import StepWrapper from '../StepWrapper';
 
 const SSN = ({ title }) => {
-    const { data } = useForm()
+    const { data } = useForm();
     return (
         <StepWrapper title={title}>
             <TextField
@@ -28,17 +28,22 @@ const SSN = ({ title }) => {
                 />
             )}
         </StepWrapper>
-    )
-}
+    );
+};
 
 const DependentSSN = ({ name, isSpouse, index }) => {
     const prefixId =
         index !== undefined
             ? `${isSpouse ? 'spouse_details' : 'dependents'}[${index}]`
-            : `${isSpouse ? 'spouse_details' : 'dependents'}`
+            : `${isSpouse ? 'spouse_details' : 'dependents'}`;
     return (
         <>
-            <StepWrapper key={name + index} title={name} rounded={false} borderBottom={false}>
+            <StepWrapper
+                key={name + index}
+                title={name}
+                rounded={false}
+                borderBottom={false}
+            >
                 <TextField
                     label="Social Security Number"
                     placeholder={'Social Security Number'}
@@ -49,7 +54,7 @@ const DependentSSN = ({ name, isSpouse, index }) => {
                 />
             </StepWrapper>
         </>
-    )
-}
+    );
+};
 
-export default SSN
+export default SSN;
