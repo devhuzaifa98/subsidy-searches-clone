@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import GirlPointing from '../../assets/images/girl-pointing.png';
 import HeroImg from '../../assets/images/hero.jpg';
@@ -45,7 +45,7 @@ const Hero = () => {
                     <img src={PhoneWhite} className="h-10 w-10" />
                     <div className="flex flex-col">
                         <a
-                            href="tel:1-866-650-0567"
+                            href="tel:1-888-294-9212"
                             className="text-md font-extrabold !leading-none lg:text-lg"
                         >
                             1-888-294-9212

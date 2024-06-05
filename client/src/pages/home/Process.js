@@ -43,7 +43,7 @@ const Process = () => {
     return (
         <section
             id="process"
-            className="relative z-0 bg-white py-10 py-16 text-gray-700"
+            className="relative z-0 bg-white py-10 text-gray-700"
         >
             <img
                 src={wave}

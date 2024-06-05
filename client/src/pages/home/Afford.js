@@ -9,7 +9,7 @@ const Afford = () => {
     return (
         <section
             id="afford"
-            className="relative z-0 flex flex-col gap-y-10 bg-gray-100 bg-transparent px-5 py-10 py-16 text-gray-700"
+            className="relative z-0 flex flex-col gap-y-10 bg-gray-100 px-5 py-10 text-gray-700"
         >
             <h1 className="text-center text-3xl font-semibold text-secondary md:text-5xl">
                 You CAN Afford Health Insurance

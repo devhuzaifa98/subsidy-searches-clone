@@ -64,7 +64,7 @@ const useContacts = () => {
                     if (index >= 1 && index <= 2) {
                         dependentsDetails[
                             GHL_CUSTOM_FIELDS[
-                                `contact.do_you_have_a_${index + 1}nd_dependent`
+                            `contact.do_you_have_a_${index + 1}nd_dependent`
                             ]
                         ] = 'Yes';
                     }
@@ -96,7 +96,7 @@ const useContacts = () => {
                     ]]: contactDoc.details.current_insurance,
                     [GHL_CUSTOM_FIELDS[
                         'contact.estimated_household_annual_income'
-                    ]]: contactDoc.details.gross_annual_income,
+                    ]]: contactDoc.details.gross_income,
                     [GHL_CUSTOM_FIELDS['contact.recent_employer']]:
                         contactDoc.details.recent_employer,
                     [GHL_CUSTOM_FIELDS['contact.are_you_a_us_national_']]:
